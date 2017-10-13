@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E238CDA1F90A16B008330D6 /* LittleLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E238CD91F90A16B008330D6 /* LittleLineViewController.swift */; };
 		0E3095251F8FB09B00A2F7D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3095241F8FB09B00A2F7D3 /* AppDelegate.swift */; };
-		0E3095271F8FB09B00A2F7D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3095261F8FB09B00A2F7D3 /* ViewController.swift */; };
 		0E30952A1F8FB09B00A2F7D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3095281F8FB09B00A2F7D3 /* Main.storyboard */; };
 		0E30952C1F8FB09B00A2F7D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E30952B1F8FB09B00A2F7D3 /* Assets.xcassets */; };
 		0E30952F1F8FB09B00A2F7D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E30952D1F8FB09B00A2F7D3 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E238CD91F90A16B008330D6 /* LittleLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleLineViewController.swift; sourceTree = "<group>"; };
 		0E3095211F8FB09B00A2F7D3 /* memoLittle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memoLittle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E3095241F8FB09B00A2F7D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0E3095261F8FB09B00A2F7D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0E3095291F8FB09B00A2F7D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E30952B1F8FB09B00A2F7D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E30952E1F8FB09B00A2F7D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,6 +35,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E238CD31F90A11E008330D6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0E238CD91F90A16B008330D6 /* LittleLineViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0E238CD41F90A124008330D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0E238CD51F90A128008330D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0E238CD61F90A12F008330D6 /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				0E3095241F8FB09B00A2F7D3 /* AppDelegate.swift */,
+				0E30952B1F8FB09B00A2F7D3 /* Assets.xcassets */,
+				0E3095301F8FB09B00A2F7D3 /* Info.plist */,
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
+		0E238CD81F90A146008330D6 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				0E3095281F8FB09B00A2F7D3 /* Main.storyboard */,
+				0E30952D1F8FB09B00A2F7D3 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
 		0E3095181F8FB09B00A2F7D3 = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +95,11 @@
 		0E3095231F8FB09B00A2F7D3 /* memoLittle */ = {
 			isa = PBXGroup;
 			children = (
-				0E3095241F8FB09B00A2F7D3 /* AppDelegate.swift */,
-				0E3095261F8FB09B00A2F7D3 /* ViewController.swift */,
-				0E3095281F8FB09B00A2F7D3 /* Main.storyboard */,
-				0E30952B1F8FB09B00A2F7D3 /* Assets.xcassets */,
-				0E30952D1F8FB09B00A2F7D3 /* LaunchScreen.storyboard */,
-				0E3095301F8FB09B00A2F7D3 /* Info.plist */,
+				0E238CD81F90A146008330D6 /* StoryBoard */,
+				0E238CD61F90A12F008330D6 /* Asset */,
+				0E238CD51F90A128008330D6 /* Model */,
+				0E238CD41F90A124008330D6 /* View */,
+				0E238CD31F90A11E008330D6 /* ViewController */,
 			);
 			path = memoLittle;
 			sourceTree = "<group>";
@@ -136,7 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E3095271F8FB09B00A2F7D3 /* ViewController.swift in Sources */,
+				0E238CDA1F90A16B008330D6 /* LittleLineViewController.swift in Sources */,
 				0E3095251F8FB09B00A2F7D3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

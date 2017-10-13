@@ -29,13 +29,17 @@
         <!--리틀라인 Littleline-->
         <scene sceneID="AGf-iX-A43">
             <objects>
-                <viewController id="sst-3G-5jA" sceneMemberID="viewController">
+                <viewController id="sst-3G-5jA" customClass="LittleLineViewController" customModule="memoLittle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OAN-XI-RYk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zG5-29-aYs">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="메모리틀 MemoLittle" largeTitleDisplayMode="never" id="QiD-Sg-6EV"/>
                                 </items>
