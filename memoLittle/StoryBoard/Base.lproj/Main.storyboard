@@ -34,6 +34,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="9uh-w8-27d">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zG5-29-aYs">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <color key="barTintColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
@@ -45,7 +49,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3kA-8E-eGA">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
                                 <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1fn-Je-70Y">
@@ -79,20 +83,32 @@
                         <constraints>
                             <constraint firstItem="zG5-29-aYs" firstAttribute="trailing" secondItem="aUd-Ni-vfI" secondAttribute="trailing" id="2OQ-at-PoS"/>
                             <constraint firstItem="zG5-29-aYs" firstAttribute="leading" secondItem="aUd-Ni-vfI" secondAttribute="leading" id="2vS-ef-SpY"/>
+                            <constraint firstItem="9uh-w8-27d" firstAttribute="trailing" secondItem="aUd-Ni-vfI" secondAttribute="trailing" id="CUV-Qd-K6a"/>
+                            <constraint firstItem="9uh-w8-27d" firstAttribute="leading" secondItem="aUd-Ni-vfI" secondAttribute="leading" id="JO5-p5-zY1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3kA-8E-eGA" secondAttribute="trailing" constant="-16" id="KYi-D2-BC8"/>
                             <constraint firstItem="3kA-8E-eGA" firstAttribute="leading" secondItem="OAN-XI-RYk" secondAttribute="leadingMargin" constant="-16" id="L6h-Rg-eJf"/>
                             <constraint firstAttribute="bottomMargin" secondItem="3kA-8E-eGA" secondAttribute="bottom" id="O8h-8C-Jrj"/>
+                            <constraint firstItem="9uh-w8-27d" firstAttribute="top" secondItem="zG5-29-aYs" secondAttribute="bottom" id="QJI-bn-NPE"/>
                             <constraint firstItem="zG5-29-aYs" firstAttribute="top" secondItem="aUd-Ni-vfI" secondAttribute="top" id="UFV-qh-Djp"/>
-                            <constraint firstItem="3kA-8E-eGA" firstAttribute="top" secondItem="zG5-29-aYs" secondAttribute="bottom" id="Vgt-3G-1bY"/>
+                            <constraint firstItem="3kA-8E-eGA" firstAttribute="top" secondItem="9uh-w8-27d" secondAttribute="bottom" id="XPI-QW-RMp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aUd-Ni-vfI"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="리틀라인 Littleline" id="mKU-BB-mzn"/>
                     <connections>
+                        <outlet property="searchDisplayController" destination="f4X-Ky-rCo" id="FkA-r7-FNW"/>
                         <outlet property="tableView" destination="3kA-8E-eGA" id="8uD-Nn-rJy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tI7-SL-Qw9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="f4X-Ky-rCo">
+                    <connections>
+                        <outlet property="delegate" destination="sst-3G-5jA" id="eCM-af-ibH"/>
+                        <outlet property="searchContentsController" destination="sst-3G-5jA" id="5CH-T3-kWj"/>
+                        <outlet property="searchResultsDataSource" destination="sst-3G-5jA" id="NLq-mg-Jqn"/>
+                        <outlet property="searchResultsDelegate" destination="sst-3G-5jA" id="yg2-l2-1jC"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1965.5999999999999" y="64.31784107946028"/>
         </scene>
