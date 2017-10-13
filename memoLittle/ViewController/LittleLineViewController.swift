@@ -11,7 +11,7 @@ import UIKit
 class LittleLineViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var list = ["호이","후이","포이"]
+    var list = ["뫄뫄","준킴","탐"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,6 +38,8 @@ extension LittleLineViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
          let cell = tableView.dequeueReusableCell(withIdentifier: "LittleLineLikeTableViewCell",for: indexPath) as! LittleLineLikeTableViewCell
+        
+        cell.personName.text? = list[indexPath.row]
         return cell
     }
     
