@@ -62,7 +62,6 @@
 			children = (
 				0E3095241F8FB09B00A2F7D3 /* AppDelegate.swift */,
 				0E30952B1F8FB09B00A2F7D3 /* Assets.xcassets */,
-				0E3095301F8FB09B00A2F7D3 /* Info.plist */,
 			);
 			path = Asset;
 			sourceTree = "<group>";
@@ -95,6 +94,7 @@
 		0E3095231F8FB09B00A2F7D3 /* memoLittle */ = {
 			isa = PBXGroup;
 			children = (
+				0E3095301F8FB09B00A2F7D3 /* Info.plist */,
 				0E238CD81F90A146008330D6 /* StoryBoard */,
 				0E238CD61F90A12F008330D6 /* Asset */,
 				0E238CD51F90A128008330D6 /* Model */,
