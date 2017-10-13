@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E238CDA1F90A16B008330D6 /* LittleLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E238CD91F90A16B008330D6 /* LittleLineViewController.swift */; };
+		0E238CDC1F90A246008330D6 /* LittleLineLikeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E238CDB1F90A246008330D6 /* LittleLineLikeTableViewCell.xib */; };
 		0E3095251F8FB09B00A2F7D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3095241F8FB09B00A2F7D3 /* AppDelegate.swift */; };
 		0E30952A1F8FB09B00A2F7D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3095281F8FB09B00A2F7D3 /* Main.storyboard */; };
 		0E30952C1F8FB09B00A2F7D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E30952B1F8FB09B00A2F7D3 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		0E238CD91F90A16B008330D6 /* LittleLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleLineViewController.swift; sourceTree = "<group>"; };
+		0E238CDB1F90A246008330D6 /* LittleLineLikeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LittleLineLikeTableViewCell.xib; sourceTree = "<group>"; };
 		0E3095211F8FB09B00A2F7D3 /* memoLittle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memoLittle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E3095241F8FB09B00A2F7D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E3095291F8FB09B00A2F7D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 		0E238CD41F90A124008330D6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0E238CDB1F90A246008330D6 /* LittleLineLikeTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			files = (
 				0E30952F1F8FB09B00A2F7D3 /* LaunchScreen.storyboard in Resources */,
 				0E30952C1F8FB09B00A2F7D3 /* Assets.xcassets in Resources */,
+				0E238CDC1F90A246008330D6 /* LittleLineLikeTableViewCell.xib in Resources */,
 				0E30952A1F8FB09B00A2F7D3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
