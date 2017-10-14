@@ -54,6 +54,7 @@ class LittleLineViewController: UIViewController {
         
         tableView.reloadData()
     }
+    
 }
 
 extension LittleLineViewController: UITableViewDelegate, UITableViewDataSource {
@@ -114,3 +115,5 @@ extension LittleLineViewController: UISearchResultsUpdating {
         filterContentForSearchText(searchController.searchBar.text!)
     }
 }
+
+

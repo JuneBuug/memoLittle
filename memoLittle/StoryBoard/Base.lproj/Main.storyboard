@@ -6,46 +6,51 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--메모하기 Memo-->
+        <!--적기 Memo-->
         <scene sceneID="NSv-wF-AyP">
             <objects>
-                <viewController id="iuW-30-HaE" sceneMemberID="viewController">
+                <viewController id="iuW-30-HaE" customClass="MemoViewController" customModule="memoLittle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Ii-QN-max">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JvS-vV-abk">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <color key="barTintColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="메모리틀 MemoLittle" largeTitleDisplayMode="never" id="gVx-Tk-UVb"/>
+                                    <navigationItem title="적기 Memo" largeTitleDisplayMode="never" id="gVx-Tk-UVb"/>
                                 </items>
                             </navigationBar>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="6Df-jW-Sax">
-                                <rect key="frame" x="0.0" y="44" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gQ3-g2-wUh">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="6Df-jW-Sax" firstAttribute="trailing" secondItem="KVg-Ta-nHi" secondAttribute="trailing" id="6wZ-sh-DzD"/>
-                            <constraint firstItem="6Df-jW-Sax" firstAttribute="leading" secondItem="KVg-Ta-nHi" secondAttribute="leading" id="9b8-Di-Ivh"/>
+                            <constraint firstItem="JvS-vV-abk" firstAttribute="trailing" secondItem="KVg-Ta-nHi" secondAttribute="trailing" id="3wP-lM-XpV"/>
+                            <constraint firstItem="KVg-Ta-nHi" firstAttribute="bottom" secondItem="gQ3-g2-wUh" secondAttribute="bottom" id="9AY-Au-qUS"/>
                             <constraint firstItem="JvS-vV-abk" firstAttribute="trailing" secondItem="KVg-Ta-nHi" secondAttribute="trailing" id="9lm-Ex-KuU"/>
-                            <constraint firstItem="JvS-vV-abk" firstAttribute="top" secondItem="1Ii-QN-max" secondAttribute="top" id="B9I-Aa-Cbf"/>
-                            <constraint firstItem="6Df-jW-Sax" firstAttribute="top" secondItem="JvS-vV-abk" secondAttribute="bottom" id="c0g-ig-xCc"/>
-                            <constraint firstItem="JvS-vV-abk" firstAttribute="leading" secondItem="KVg-Ta-nHi" secondAttribute="leading" id="vUh-p9-kMo"/>
+                            <constraint firstItem="JvS-vV-abk" firstAttribute="top" secondItem="KVg-Ta-nHi" secondAttribute="top" id="SYy-bc-1Rb"/>
+                            <constraint firstItem="KVg-Ta-nHi" firstAttribute="trailing" secondItem="gQ3-g2-wUh" secondAttribute="trailing" id="c4R-f9-OfY"/>
+                            <constraint firstItem="JvS-vV-abk" firstAttribute="leading" secondItem="KVg-Ta-nHi" secondAttribute="leading" id="egd-pN-F9y"/>
+                            <constraint firstItem="gQ3-g2-wUh" firstAttribute="leading" secondItem="KVg-Ta-nHi" secondAttribute="leading" id="gDG-lS-0Rg"/>
+                            <constraint firstItem="gQ3-g2-wUh" firstAttribute="width" secondItem="1Ii-QN-max" secondAttribute="width" id="kDv-cS-DBj"/>
+                            <constraint firstItem="gQ3-g2-wUh" firstAttribute="top" secondItem="JvS-vV-abk" secondAttribute="bottom" id="lsZ-d0-TBB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KVg-Ta-nHi"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="메모하기 Memo" id="6Qc-kP-ELI"/>
+                    <tabBarItem key="tabBarItem" title="적기 Memo" id="6Qc-kP-ELI"/>
+                    <connections>
+                        <outlet property="tableView" destination="gQ3-g2-wUh" id="drP-kI-eqf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DFa-uO-0EH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -70,7 +75,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3kA-8E-eGA">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="598"/>
                                 <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1fn-Je-70Y">
@@ -104,9 +109,9 @@
                         <constraints>
                             <constraint firstItem="zG5-29-aYs" firstAttribute="trailing" secondItem="aUd-Ni-vfI" secondAttribute="trailing" id="2OQ-at-PoS"/>
                             <constraint firstItem="zG5-29-aYs" firstAttribute="leading" secondItem="aUd-Ni-vfI" secondAttribute="leading" id="2vS-ef-SpY"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="3kA-8E-eGA" secondAttribute="bottom" id="O8h-8C-Jrj"/>
                             <constraint firstItem="3kA-8E-eGA" firstAttribute="leading" secondItem="aUd-Ni-vfI" secondAttribute="leading" id="R0S-3C-fsd"/>
                             <constraint firstItem="zG5-29-aYs" firstAttribute="top" secondItem="aUd-Ni-vfI" secondAttribute="top" id="UFV-qh-Djp"/>
+                            <constraint firstItem="3kA-8E-eGA" firstAttribute="height" secondItem="aUd-Ni-vfI" secondAttribute="height" id="Xx3-C2-PcM"/>
                             <constraint firstItem="3kA-8E-eGA" firstAttribute="trailing" secondItem="aUd-Ni-vfI" secondAttribute="trailing" id="YI7-hY-lwc"/>
                             <constraint firstItem="3kA-8E-eGA" firstAttribute="top" secondItem="zG5-29-aYs" secondAttribute="bottom" id="pFN-Gg-pDF"/>
                             <constraint firstItem="3kA-8E-eGA" firstAttribute="width" secondItem="OAN-XI-RYk" secondAttribute="width" id="z9f-5c-fsn"/>
