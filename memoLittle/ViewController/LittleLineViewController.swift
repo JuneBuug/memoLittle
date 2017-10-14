@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import AVFoundation
 class LittleLineViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -16,6 +16,17 @@ class LittleLineViewController: UIViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
 
+    @IBAction func onTouchTTSBtn(_ sender: Any) {
+        let synthesizer = AVSpeechSynthesizer()
+        
+        let str = "오늘은" + list[0].personName + "님에게 " + list[0].objectName + "를 해주시는 건 어떨까요?"
+        let utterance = AVSpeechUtterance(string: str)
+        utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
+        utterance.rate = 0.4
+        
+        synthesizer.speak(utterance)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

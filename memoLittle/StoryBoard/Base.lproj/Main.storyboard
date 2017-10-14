@@ -71,7 +71,14 @@
                                     <color key="textColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="메모리틀 MemoLittle" largeTitleDisplayMode="never" id="QiD-Sg-6EV"/>
+                                    <navigationItem title="메모리틀 MemoLittle" largeTitleDisplayMode="never" id="QiD-Sg-6EV">
+                                        <barButtonItem key="rightBarButtonItem" image="ic_tts" id="VTc-Jp-kXR">
+                                            <inset key="largeContentSizeImageInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                            <connections>
+                                                <action selector="onTouchTTSBtn:" destination="sst-3G-5jA" id="Hrt-wL-gvL"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3kA-8E-eGA">
@@ -172,4 +179,7 @@
             <point key="canvasLocation" x="1966" y="1611"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_tts" width="170" height="170"/>
+    </resources>
 </document>
