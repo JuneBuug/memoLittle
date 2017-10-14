@@ -25,7 +25,9 @@ class LittleLineViewController: UIViewController {
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
-        
+        searchController.searchBar.placeholder = "이름 혹은 대상으로 검색해보세요."
+        searchController.searchBar.setValue("취소", forKey:"_cancelButtonText")
+
         tableView.register(UINib(nibName: "LittleLineLikeTableViewCell", bundle: nil), forCellReuseIdentifier: "LittleLineLikeTableViewCell")
         tableView.register(UINib(nibName: "LittleLineEventTableViewCell", bundle: nil), forCellReuseIdentifier: "LittleLineEventTableViewCell")
         // Do any additional setup after loading the view.
