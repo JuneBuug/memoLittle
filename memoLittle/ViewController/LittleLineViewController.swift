@@ -11,7 +11,8 @@ import UIKit
 class LittleLineViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var list = ["뫄뫄","준킴","탐"]
+    var list = ["뫄뫄","준킴","탐","준영","준"]
+    var filtered_list: Array<String> = []
     
     let searchController = UISearchController(searchResultsController: nil)
 
@@ -39,13 +40,24 @@ class LittleLineViewController: UIViewController {
         return searchController.isActive
     }
     
-
+    func searchBarIsEmpty() -> Bool {
+        // Returns true if the text is empty or nil
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        filtered_list = list.filter({( name : String) -> Bool in
+            return name.lowercased().contains(searchText.lowercased())
+        })
+        
+        tableView.reloadData()
+    }
 }
 
 extension LittleLineViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering() {
-            return 5;
+            return filtered_list.count;
         }else{
             return list.count;
         }
@@ -54,7 +66,15 @@ extension LittleLineViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if isFiltering(){
-            return UITableViewCell()
+            if indexPath.row % 2 == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "LittleLineLikeTableViewCell",for: indexPath) as! LittleLineLikeTableViewCell
+                cell.personName.text? = filtered_list[indexPath.row]
+                return cell
+            }else{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "LittleLineEventTableViewCell",for: indexPath) as! LittleLineEventTableViewCell
+                cell.personName.text? = filtered_list[indexPath.row]
+                return cell
+            }
         }else{
             if indexPath.row % 2 == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "LittleLineLikeTableViewCell",for: indexPath) as! LittleLineLikeTableViewCell
@@ -84,6 +104,6 @@ extension LittleLineViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension LittleLineViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-     
+        filterContentForSearchText(searchController.searchBar.text!)
     }
 }
