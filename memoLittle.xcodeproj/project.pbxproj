@@ -12,6 +12,7 @@
 		0E238CE21F90A58D008330D6 /* LittleLineLikeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E238CE01F90A58D008330D6 /* LittleLineLikeTableViewCell.xib */; };
 		0E238CE51F90AD9D008330D6 /* LittleLineEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E238CE31F90AD9D008330D6 /* LittleLineEventTableViewCell.swift */; };
 		0E238CE61F90AD9D008330D6 /* LittleLineEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E238CE41F90AD9D008330D6 /* LittleLineEventTableViewCell.xib */; };
+		0E238CEA1F92073A008330D6 /* LittleLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E238CE91F92073A008330D6 /* LittleLine.swift */; };
 		0E3095251F8FB09B00A2F7D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3095241F8FB09B00A2F7D3 /* AppDelegate.swift */; };
 		0E30952A1F8FB09B00A2F7D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3095281F8FB09B00A2F7D3 /* Main.storyboard */; };
 		0E30952C1F8FB09B00A2F7D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E30952B1F8FB09B00A2F7D3 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		0E238CE01F90A58D008330D6 /* LittleLineLikeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LittleLineLikeTableViewCell.xib; sourceTree = "<group>"; };
 		0E238CE31F90AD9D008330D6 /* LittleLineEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleLineEventTableViewCell.swift; sourceTree = "<group>"; };
 		0E238CE41F90AD9D008330D6 /* LittleLineEventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LittleLineEventTableViewCell.xib; sourceTree = "<group>"; };
+		0E238CE91F92073A008330D6 /* LittleLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleLine.swift; sourceTree = "<group>"; };
 		0E3095211F8FB09B00A2F7D3 /* memoLittle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memoLittle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E3095241F8FB09B00A2F7D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E3095291F8FB09B00A2F7D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 		0E238CD51F90A128008330D6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0E238CE91F92073A008330D6 /* LittleLine.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -108,9 +111,9 @@
 			children = (
 				0E3095301F8FB09B00A2F7D3 /* Info.plist */,
 				0E238CD81F90A146008330D6 /* StoryBoard */,
+				0E238CD41F90A124008330D6 /* View */,
 				0E238CD61F90A12F008330D6 /* Asset */,
 				0E238CD51F90A128008330D6 /* Model */,
-				0E238CD41F90A124008330D6 /* View */,
 				0E238CD31F90A11E008330D6 /* ViewController */,
 			);
 			path = memoLittle;
@@ -194,6 +197,7 @@
 				0E238CDA1F90A16B008330D6 /* LittleLineViewController.swift in Sources */,
 				0E238CE11F90A58D008330D6 /* LittleLineLikeTableViewCell.swift in Sources */,
 				0E3095251F8FB09B00A2F7D3 /* AppDelegate.swift in Sources */,
+				0E238CEA1F92073A008330D6 /* LittleLine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

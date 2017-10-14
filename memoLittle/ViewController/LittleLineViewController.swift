@@ -11,8 +11,8 @@ import UIKit
 class LittleLineViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var list = ["뫄뫄","준킴","탐","준영","준"]
-    var filtered_list: Array<String> = []
+    var list = [LittleLine(category: 0, personName: "뫄뫄",objectName: "떡볶이",id: 1),LittleLine(category: 0, personName: "준킴",objectName: "족발막국수",id: 2),LittleLine(category: 1, personName: "탐",objectName: "처음만난날",id: 3),LittleLine(category: 0, personName: "준",objectName: "유자차",id: 4)]
+    var filtered_list: Array<LittleLine> = []
     
     let searchController = UISearchController(searchResultsController: nil)
 
@@ -46,8 +46,8 @@ class LittleLineViewController: UIViewController {
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        filtered_list = list.filter({( name : String) -> Bool in
-            return name.lowercased().contains(searchText.lowercased())
+        filtered_list = list.filter({( line : LittleLine) -> Bool in
+            return line.objectName.lowercased().contains(searchText.lowercased()) || line.personName.lowercased().contains(searchText.lowercased())
         })
         
         tableView.reloadData()
@@ -66,23 +66,28 @@ extension LittleLineViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if isFiltering(){
-            if indexPath.row % 2 == 0 {
+            
+            if filtered_list[indexPath.row].category == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "LittleLineLikeTableViewCell",for: indexPath) as! LittleLineLikeTableViewCell
-                cell.personName.text? = filtered_list[indexPath.row]
+                cell.personName.text? = filtered_list[indexPath.row].personName
+                cell.likeObject.text? = filtered_list[indexPath.row].objectName
                 return cell
             }else{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "LittleLineEventTableViewCell",for: indexPath) as! LittleLineEventTableViewCell
-                cell.personName.text? = filtered_list[indexPath.row]
+                cell.personName.text? = filtered_list[indexPath.row].personName
+                cell.eventLabel.text? = filtered_list[indexPath.row].objectName
                 return cell
             }
         }else{
-            if indexPath.row % 2 == 0 {
+            if list[indexPath.row].category == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "LittleLineLikeTableViewCell",for: indexPath) as! LittleLineLikeTableViewCell
-                cell.personName.text? = list[indexPath.row]
+                cell.personName.text? = list[indexPath.row].personName
+                cell.likeObject.text? = list[indexPath.row].objectName
                 return cell
             }else{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "LittleLineEventTableViewCell",for: indexPath) as! LittleLineEventTableViewCell
-                cell.personName.text? = list[indexPath.row]
+                cell.personName.text? = list[indexPath.row].personName
+                cell.eventLabel.text? = list[indexPath.row].objectName
                 return cell
             }
         }
