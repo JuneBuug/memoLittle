@@ -151,6 +151,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.0" green="0.68643361329999997" blue="0.49380367990000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="sst-3G-5jA" kind="relationship" relationship="viewControllers" id="sxw-o0-MmQ"/>
@@ -180,6 +185,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_tts" width="170" height="170"/>
+        <image name="ic_tts" width="24" height="24"/>
     </resources>
 </document>
