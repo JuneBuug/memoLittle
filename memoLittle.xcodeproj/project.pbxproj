@@ -17,6 +17,7 @@
 		0E30952A1F8FB09B00A2F7D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3095281F8FB09B00A2F7D3 /* Main.storyboard */; };
 		0E30952C1F8FB09B00A2F7D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E30952B1F8FB09B00A2F7D3 /* Assets.xcassets */; };
 		0E30952F1F8FB09B00A2F7D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E30952D1F8FB09B00A2F7D3 /* LaunchScreen.storyboard */; };
+		0E5981D01F94C48900D92444 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5981CF1F94C48900D92444 /* WriteViewController.swift */; };
 		0EC5AED41F9216EE00DE221B /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5AED31F9216EE00DE221B /* MemoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		0E30952B1F8FB09B00A2F7D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E30952E1F8FB09B00A2F7D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E3095301F8FB09B00A2F7D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E5981CF1F94C48900D92444 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		0EC5AED31F9216EE00DE221B /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,6 +54,7 @@
 			children = (
 				0E238CD91F90A16B008330D6 /* LittleLineViewController.swift */,
 				0EC5AED31F9216EE00DE221B /* MemoViewController.swift */,
+				0E5981CF1F94C48900D92444 /* WriteViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				0E238CE11F90A58D008330D6 /* LittleLineLikeTableViewCell.swift in Sources */,
 				0E3095251F8FB09B00A2F7D3 /* AppDelegate.swift in Sources */,
 				0E238CEA1F92073A008330D6 /* LittleLine.swift in Sources */,
+				0E5981D01F94C48900D92444 /* WriteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

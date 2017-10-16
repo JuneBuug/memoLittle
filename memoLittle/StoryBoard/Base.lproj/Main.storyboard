@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -55,6 +56,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DFa-uO-0EH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1967" y="878"/>
+        </scene>
+        <!--Write View Controller-->
+        <scene sceneID="8A5-NE-Ztu">
+            <objects>
+                <viewController id="rha-nY-Xxi" customClass="WriteViewController" customModule="memoLittle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mYI-IY-fS3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AyF-ib-Iyu">
+                                <rect key="frame" x="0.0" y="61" width="391" height="667"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="ypq-cB-HdB">
+                                        <rect key="frame" x="8" y="8" width="356" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOB-Zx-oQf">
+                                <rect key="frame" x="12" y="32" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="JzR-8H-pK0"/>
+                                    <constraint firstAttribute="width" constant="24" id="sTY-tY-SZc"/>
+                                </constraints>
+                                <state key="normal" image="ic_exit"/>
+                                <connections>
+                                    <action selector="onTouchCloseBtn:" destination="rha-nY-Xxi" eventType="touchUpInside" id="PdB-0g-9T5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="FOB-Zx-oQf" firstAttribute="leading" secondItem="wWk-xT-NVU" secondAttribute="leading" constant="12" id="D3a-z0-4HL"/>
+                            <constraint firstItem="AyF-ib-Iyu" firstAttribute="top" secondItem="mYI-IY-fS3" secondAttribute="topMargin" constant="41" id="DDM-pJ-SmC"/>
+                            <constraint firstItem="wWk-xT-NVU" firstAttribute="trailing" secondItem="AyF-ib-Iyu" secondAttribute="trailing" constant="-16" id="Hwk-qp-wg8"/>
+                            <constraint firstItem="AyF-ib-Iyu" firstAttribute="height" secondItem="mYI-IY-fS3" secondAttribute="height" id="Iay-3k-PVO"/>
+                            <constraint firstItem="AyF-ib-Iyu" firstAttribute="leading" secondItem="mYI-IY-fS3" secondAttribute="leadingMargin" constant="-16" id="V4X-0m-WM7"/>
+                            <constraint firstItem="FOB-Zx-oQf" firstAttribute="top" secondItem="wWk-xT-NVU" secondAttribute="top" constant="12" id="pTM-WB-heJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wWk-xT-NVU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tEP-dm-bkz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2631" y="878"/>
         </scene>
         <!--리틀라인 Littleline-->
         <scene sceneID="AGf-iX-A43">
@@ -185,6 +235,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_exit" width="16" height="15"/>
         <image name="ic_tts" width="24" height="24"/>
     </resources>
 </document>
