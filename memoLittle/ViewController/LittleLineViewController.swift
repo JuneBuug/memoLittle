@@ -123,9 +123,9 @@ extension LittleLineViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // 들어갈때 selected 된 걸 풀어줘야함
         tableView.deselectRow(at: indexPath, animated: false)
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "WriteViewController") as! WriteViewController
-        self.show(vc, sender: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "WriteViewController") as! WriteViewController
+        self.present(vc, animated: true, completion: nil)
     }
 }
 

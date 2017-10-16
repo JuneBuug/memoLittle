@@ -22,10 +22,11 @@ class WriteViewController: UIViewController {
     }
     
 
-    @IBAction func onTouchCloseBtn(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func onTouchClose(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
+
     /*
     // MARK: - Navigation
 
