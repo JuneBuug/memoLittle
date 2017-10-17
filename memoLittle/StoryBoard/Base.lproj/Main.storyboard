@@ -68,13 +68,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AyF-ib-Iyu">
                                 <rect key="frame" x="0.0" y="61" width="391" height="667"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="ypq-cB-HdB">
-                                        <rect key="frame" x="8" y="8" width="356" height="30"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="75c-Ia-p42">
+                                        <rect key="frame" x="19" y="8" width="344" height="297"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -101,10 +101,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wWk-xT-NVU"/>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="75c-Ia-p42" id="p7s-xz-9zD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tEP-dm-bkz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2631" y="878"/>
+            <point key="canvasLocation" x="2629.5999999999999" y="877.51124437781118"/>
         </scene>
         <!--리틀라인 Littleline-->
         <scene sceneID="AGf-iX-A43">

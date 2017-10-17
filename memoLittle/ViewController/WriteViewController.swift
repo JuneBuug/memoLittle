@@ -10,9 +10,23 @@ import UIKit
 
 class WriteViewController: UIViewController {
 
+    @IBOutlet weak var textView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        keyboardToolbar.isTranslucent = false
+        keyboardToolbar.barTintColor = UIColor.white
+        
+        let addButton = UIBarButtonItem(
+            barButtonSystemItem: .done,
+            target: self,
+            action: #selector(sth)
+        )
+        addButton.tintColor = UIColor.black
+        keyboardToolbar.items = [addButton]
+        textView.inputAccessoryView = keyboardToolbar
         // Do any additional setup after loading the view.
     }
 
@@ -21,6 +35,9 @@ class WriteViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @objc func sth(){
+        print("버튼 눌러졌습니다.")
+    }
 
     @IBAction func onTouchClose(_ sender: Any) {
         navigationController?.popViewController(animated: true)
