@@ -9,11 +9,11 @@
 
 import RealmSwift
 
-// 모델입니다
+// 타임라인 글
 final class LittleLine : Object {
     
     @objc dynamic var category = 0 // 리틀라인 게시글 종류 0 : 좋아하는 것 1: 날짜 관련 이벤트
-    @objc dynamic var personName = "" // 사람 이름
+    @objc dynamic var writer: Person? // 이 대상 사람
     @objc dynamic var objectName = "" // 대상 이름 / 이벤트 이름
     @objc dynamic var id = UUID().uuidString // 해당 내용의 id
     
@@ -21,4 +21,15 @@ final class LittleLine : Object {
         return "id"
     }
     
+}
+
+// 사람
+final class Person : Object {
+    @objc dynamic var name = "" // 사람 이름
+    @objc dynamic var relationship = "" // 이 사람과의 관계
+    @objc dynamic var id = UUID().uuidString // 사람 id
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }

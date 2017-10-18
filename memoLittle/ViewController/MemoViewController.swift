@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MemoViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var list : Results<Person>!
+    var notificationToken: NotificationToken!
+    var realm: Realm!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+    
         // Do any additional setup after loading the view.
     }
 
@@ -23,7 +29,13 @@ class MemoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    // 사람 추가 view로 이동
+    @IBAction func onTouchAddBtn(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "AddPersonViewController") as! AddPersonViewController
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

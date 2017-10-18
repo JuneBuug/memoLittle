@@ -1,61 +1,45 @@
 //
-//  WriteViewController.swift
+//  AddPersonViewController.swift
 //  memoLittle
 //
-//  Created by 준킴 on 2017. 10. 16..
+//  Created by 준킴 on 2017. 10. 18..
 //  Copyright © 2017년 junebuug. All rights reserved.
 //
 
 import UIKit
 import RealmSwift
 
-class WriteViewController: UIViewController {
+class AddPersonViewController: UIViewController {
 
     @IBOutlet weak var textView: UITextView!
-
+    @IBOutlet weak var relationship: UITextView!
     let realm = try! Realm()
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let keyboardToolbar = UIToolbar()
-        keyboardToolbar.sizeToFit()
-        keyboardToolbar.isTranslucent = false
-        keyboardToolbar.barTintColor = UIColor.white
-        
-        let addButton = UIBarButtonItem(
-            barButtonSystemItem: .done,
-            target: self,
-            action: #selector(sth)
-        )
-        addButton.tintColor = UIColor.black
-        keyboardToolbar.items = [addButton]
-        textView.inputAccessoryView = keyboardToolbar
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // Dispose of any resources that can bse recreated.
     }
     
-    @objc func sth(){
-        let obj = LittleLine()
-        obj.objectName = textView.text
-//        obj.personName = "준키미"
-        obj.category = 0
-        obj.id = UUID().uuidString
+    @IBAction func onTouchWrite(_ sender: Any) {
+        let obj = Person()
+        obj.name = textView.text
+        obj.relationship = relationship.text
         try! realm.write{
             realm.add(obj)
         }
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
     }
-
+    
     @IBAction func onTouchClose(_ sender: Any) {
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
     }
-
     /*
     // MARK: - Navigation
 

@@ -25,7 +25,8 @@ class LittleLineViewController: UIViewController {
     @IBAction func onTouchTTSBtn(_ sender: Any) {
         let synthesizer = AVSpeechSynthesizer()
         
-        let str = "오늘은" + list[0].personName + "님에게 " + list[0].objectName + "를 해주시는 건 어떨까요?"
+        let str = "샘플입니다."
+//        let str = "오늘은" + list[0].personName + "님에게 " + list[0].objectName + "를 해주시는 건 어떨까요?"
         let utterance = AVSpeechUtterance(string: str)
         utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
         utterance.rate = 0.4
@@ -107,24 +108,24 @@ extension LittleLineViewController: UITableViewDelegate, UITableViewDataSource {
             
             if filtered_list[indexPath.row].category == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "LittleLineLikeTableViewCell",for: indexPath) as! LittleLineLikeTableViewCell
-                cell.personName.text? = filtered_list[indexPath.row].personName
+                cell.personName.text? = (filtered_list[indexPath.row].writer?.name)!
                 cell.likeObject.text? = filtered_list[indexPath.row].objectName
                 return cell
             }else{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "LittleLineEventTableViewCell",for: indexPath) as! LittleLineEventTableViewCell
-                cell.personName.text? = filtered_list[indexPath.row].personName
+                cell.personName.text? = (filtered_list[indexPath.row].writer?.name)!
                 cell.eventLabel.text? = filtered_list[indexPath.row].objectName
                 return cell
             }
         }else{
             if list[indexPath.row].category == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "LittleLineLikeTableViewCell",for: indexPath) as! LittleLineLikeTableViewCell
-                cell.personName.text? = list[indexPath.row].personName
+                cell.personName.text? = (list[indexPath.row].writer?.name)!
                 cell.likeObject.text? = list[indexPath.row].objectName
                 return cell
             }else{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "LittleLineEventTableViewCell",for: indexPath) as! LittleLineEventTableViewCell
-                cell.personName.text? = list[indexPath.row].personName
+                cell.personName.text? = (list[indexPath.row].writer?.name)!
                 cell.eventLabel.text? = list[indexPath.row].objectName
                 return cell
             }

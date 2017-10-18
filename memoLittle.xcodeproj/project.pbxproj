@@ -18,6 +18,7 @@
 		0E30952C1F8FB09B00A2F7D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E30952B1F8FB09B00A2F7D3 /* Assets.xcassets */; };
 		0E30952F1F8FB09B00A2F7D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E30952D1F8FB09B00A2F7D3 /* LaunchScreen.storyboard */; };
 		0E5981D01F94C48900D92444 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5981CF1F94C48900D92444 /* WriteViewController.swift */; };
+		0E6106D71F97691800E87765 /* AddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6106D61F97691800E87765 /* AddPersonViewController.swift */; };
 		0EC5AED41F9216EE00DE221B /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5AED31F9216EE00DE221B /* MemoViewController.swift */; };
 		9C441D585612D25709498673 /* Pods_memoLittle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F69D3DD7068D77B9D765E5AD /* Pods_memoLittle.framework */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		0E30952E1F8FB09B00A2F7D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E3095301F8FB09B00A2F7D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E5981CF1F94C48900D92444 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
+		0E6106D61F97691800E87765 /* AddPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonViewController.swift; sourceTree = "<group>"; };
 		0EC5AED31F9216EE00DE221B /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 		883B577E3613F91F481977A2 /* Pods-memoLittle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memoLittle.release.xcconfig"; path = "Pods/Target Support Files/Pods-memoLittle/Pods-memoLittle.release.xcconfig"; sourceTree = "<group>"; };
 		AF47D39B400D2F65BC775A88 /* Pods-memoLittle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memoLittle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-memoLittle/Pods-memoLittle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				0E238CD91F90A16B008330D6 /* LittleLineViewController.swift */,
 				0EC5AED31F9216EE00DE221B /* MemoViewController.swift */,
 				0E5981CF1F94C48900D92444 /* WriteViewController.swift */,
+				0E6106D61F97691800E87765 /* AddPersonViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				0E3095251F8FB09B00A2F7D3 /* AppDelegate.swift in Sources */,
 				0E238CEA1F92073A008330D6 /* LittleLine.swift in Sources */,
 				0E5981D01F94C48900D92444 /* WriteViewController.swift in Sources */,
+				0E6106D71F97691800E87765 /* AddPersonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
