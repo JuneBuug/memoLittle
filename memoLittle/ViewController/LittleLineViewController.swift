@@ -81,8 +81,8 @@ class LittleLineViewController: UIViewController {
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-//      
-//        filtered_list = realm.objects(LittleLine.self).filter("personName CONTAINS[c]%@",searchText)
+      
+        filtered_list = realm.objects(LittleLine.self).filter("personName CONTAINS[c]%@ OR objectName CONTAINS[c]%@",searchText,searchText)
 
         tableView.reloadData()
     }
