@@ -38,6 +38,9 @@ class LittleLineViewController: UIViewController {
         // Realm init
         setupRealm()
         list = realm.objects(LittleLine.self)
+        notificationToken = list.addNotificationBlock({ (change) in
+            self.tableView.reloadData()
+        })
         tableView.dataSource = self
         tableView.delegate = self
         searchController.searchResultsUpdater = self
@@ -139,7 +142,6 @@ extension LittleLineViewController: UITableViewDelegate, UITableViewDataSource {
             do {
                 try self.realm.write {
                     self.realm.delete(self.list[indexPath.row])
-                    tableView.reloadData()
                 }
             } catch {
                 print("\(error)")
