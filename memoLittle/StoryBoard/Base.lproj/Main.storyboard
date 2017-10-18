@@ -6,7 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -48,7 +48,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KVg-Ta-nHi"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="적기 Memo" id="6Qc-kP-ELI"/>
+                    <tabBarItem key="tabBarItem" title="적기 Memo" image="ic_add" id="6Qc-kP-ELI"/>
                     <connections>
                         <outlet property="tableView" destination="gQ3-g2-wUh" id="drP-kI-eqf"/>
                     </connections>
@@ -66,17 +66,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AyF-ib-Iyu">
-                                <rect key="frame" x="0.0" y="61" width="391" height="667"/>
+                                <rect key="frame" x="0.0" y="61" width="375" height="647"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="75c-Ia-p42">
-                                        <rect key="frame" x="19" y="8" width="344" height="297"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="75c-Ia-p42">
+                                        <rect key="frame" x="23.5" y="8" width="328" height="647"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="75c-Ia-p42" firstAttribute="width" secondItem="AyF-ib-Iyu" secondAttribute="width" multiplier="7/8" id="425-Og-Kc0"/>
+                                    <constraint firstItem="75c-Ia-p42" firstAttribute="centerX" secondItem="AyF-ib-Iyu" secondAttribute="centerX" id="KJi-RF-WQD"/>
+                                    <constraint firstItem="75c-Ia-p42" firstAttribute="top" secondItem="AyF-ib-Iyu" secondAttribute="top" constant="8" id="ohJ-Bb-028"/>
+                                    <constraint firstItem="75c-Ia-p42" firstAttribute="height" secondItem="AyF-ib-Iyu" secondAttribute="height" id="qSu-ft-pLJ"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOB-Zx-oQf">
                                 <rect key="frame" x="12" y="32" width="24" height="24"/>
@@ -92,11 +97,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="AyF-ib-Iyu" firstAttribute="top" secondItem="wWk-xT-NVU" secondAttribute="bottom" constant="-606" id="8PT-uF-t32"/>
+                            <constraint firstItem="AyF-ib-Iyu" firstAttribute="width" secondItem="wWk-xT-NVU" secondAttribute="width" id="CSc-TU-cdu"/>
                             <constraint firstItem="FOB-Zx-oQf" firstAttribute="leading" secondItem="wWk-xT-NVU" secondAttribute="leading" constant="12" id="D3a-z0-4HL"/>
-                            <constraint firstItem="wWk-xT-NVU" firstAttribute="trailing" secondItem="AyF-ib-Iyu" secondAttribute="trailing" constant="-16" id="Hwk-qp-wg8"/>
-                            <constraint firstItem="AyF-ib-Iyu" firstAttribute="height" secondItem="mYI-IY-fS3" secondAttribute="height" id="Iay-3k-PVO"/>
-                            <constraint firstItem="AyF-ib-Iyu" firstAttribute="leading" secondItem="mYI-IY-fS3" secondAttribute="leadingMargin" constant="-16" id="V4X-0m-WM7"/>
+                            <constraint firstItem="wWk-xT-NVU" firstAttribute="trailing" secondItem="AyF-ib-Iyu" secondAttribute="trailing" id="GM0-Ci-pmv"/>
+                            <constraint firstItem="AyF-ib-Iyu" firstAttribute="height" secondItem="wWk-xT-NVU" secondAttribute="height" id="Hsi-I2-rsr"/>
+                            <constraint firstItem="AyF-ib-Iyu" firstAttribute="top" secondItem="wWk-xT-NVU" secondAttribute="top" constant="41" id="mWs-Oy-nOf"/>
                             <constraint firstItem="FOB-Zx-oQf" firstAttribute="top" secondItem="wWk-xT-NVU" secondAttribute="top" constant="12" id="pTM-WB-heJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wWk-xT-NVU"/>
@@ -178,7 +183,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aUd-Ni-vfI"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="리틀라인 Littleline" id="mKU-BB-mzn"/>
+                    <tabBarItem key="tabBarItem" title="리틀라인 Littleline" image="ic_timeline" id="mKU-BB-mzn"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="f4X-Ky-rCo" id="FkA-r7-FNW"/>
                         <outlet property="tableView" destination="3kA-8E-eGA" id="8uD-Nn-rJy"/>
@@ -238,7 +243,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_add" width="26" height="26"/>
         <image name="ic_exit" width="16" height="15"/>
+        <image name="ic_timeline" width="26" height="26"/>
         <image name="ic_tts" width="24" height="24"/>
     </resources>
 </document>
