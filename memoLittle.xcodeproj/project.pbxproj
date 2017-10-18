@@ -19,6 +19,7 @@
 		0E30952F1F8FB09B00A2F7D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E30952D1F8FB09B00A2F7D3 /* LaunchScreen.storyboard */; };
 		0E5981D01F94C48900D92444 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5981CF1F94C48900D92444 /* WriteViewController.swift */; };
 		0EC5AED41F9216EE00DE221B /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5AED31F9216EE00DE221B /* MemoViewController.swift */; };
+		9C441D585612D25709498673 /* Pods_memoLittle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F69D3DD7068D77B9D765E5AD /* Pods_memoLittle.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,9 @@
 		0E3095301F8FB09B00A2F7D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E5981CF1F94C48900D92444 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		0EC5AED31F9216EE00DE221B /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
+		883B577E3613F91F481977A2 /* Pods-memoLittle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memoLittle.release.xcconfig"; path = "Pods/Target Support Files/Pods-memoLittle/Pods-memoLittle.release.xcconfig"; sourceTree = "<group>"; };
+		AF47D39B400D2F65BC775A88 /* Pods-memoLittle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memoLittle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-memoLittle/Pods-memoLittle.debug.xcconfig"; sourceTree = "<group>"; };
+		F69D3DD7068D77B9D765E5AD /* Pods_memoLittle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_memoLittle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C441D585612D25709498673 /* Pods_memoLittle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +106,8 @@
 			children = (
 				0E3095231F8FB09B00A2F7D3 /* memoLittle */,
 				0E3095221F8FB09B00A2F7D3 /* Products */,
+				E33C6017724504E05C3E7ACB /* Pods */,
+				BE782AC5D294DD2380D5368A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +132,23 @@
 			path = memoLittle;
 			sourceTree = "<group>";
 		};
+		BE782AC5D294DD2380D5368A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F69D3DD7068D77B9D765E5AD /* Pods_memoLittle.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E33C6017724504E05C3E7ACB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF47D39B400D2F65BC775A88 /* Pods-memoLittle.debug.xcconfig */,
+				883B577E3613F91F481977A2 /* Pods-memoLittle.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E3095331F8FB09B00A2F7D3 /* Build configuration list for PBXNativeTarget "memoLittle" */;
 			buildPhases = (
+				20335E1674A3B24BD09E2C13 /* [CP] Check Pods Manifest.lock */,
 				0E30951D1F8FB09B00A2F7D3 /* Sources */,
 				0E30951E1F8FB09B00A2F7D3 /* Frameworks */,
 				0E30951F1F8FB09B00A2F7D3 /* Resources */,
+				2E2AECDDCB9A067B6632C63A /* [CP] Embed Pods Frameworks */,
+				80518219B6BBFB49BCC437A7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,6 +220,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		20335E1674A3B24BD09E2C13 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-memoLittle-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E2AECDDCB9A067B6632C63A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-memoLittle/Pods-memoLittle-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-memoLittle/Pods-memoLittle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80518219B6BBFB49BCC437A7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-memoLittle/Pods-memoLittle-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0E30951D1F8FB09B00A2F7D3 /* Sources */ = {
@@ -340,6 +423,7 @@
 		};
 		0E3095341F8FB09B00A2F7D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF47D39B400D2F65BC775A88 /* Pods-memoLittle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -356,6 +440,7 @@
 		};
 		0E3095351F8FB09B00A2F7D3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 883B577E3613F91F481977A2 /* Pods-memoLittle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

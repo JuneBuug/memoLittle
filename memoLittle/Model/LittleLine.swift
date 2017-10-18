@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import RealmSwift
 
-class LittleLine {
+class LittleLine  {
     
     var category : Int // 리틀라인 게시글 종류 0 : 좋아하는 것 1: 날짜 관련 이벤트
     var personName : String // 사람 이름
