@@ -132,13 +132,24 @@ extension LittleLineViewController: UITableViewDelegate, UITableViewDataSource {
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.delete) {
-            
-//            list.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .automatic)
-//            tableView.reloadData()
+    
+  func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        // realm delete
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "삭제") { (deleteAction, indexPath) in
+            do {
+                try self.realm.write {
+                    self.realm.delete(self.list[indexPath.row])
+                    tableView.reloadData()
+                }
+            } catch {
+                print("\(error)")
+            }
         }
+        
+        let editAction = UITableViewRowAction(style: .normal, title: "편집") { (editAction, indexPath) in
+//            self.alertForAlbumTitle(albumToBeUpdated: self.albums[indexPath.row])
+        }
+        return [deleteAction, editAction]
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
