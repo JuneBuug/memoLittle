@@ -235,7 +235,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="rfZ-8b-KhC"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="설정 Settings" id="egA-d4-Bnc"/>
+                    <tabBarItem key="tabBarItem" title="설정 Settings" image="ic_more" id="egA-d4-Bnc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qCo-aG-1gv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -245,6 +245,7 @@
     <resources>
         <image name="ic_add" width="26" height="26"/>
         <image name="ic_exit" width="16" height="15"/>
+        <image name="ic_more" width="26" height="26"/>
         <image name="ic_timeline" width="26" height="26"/>
         <image name="ic_tts" width="24" height="24"/>
     </resources>
