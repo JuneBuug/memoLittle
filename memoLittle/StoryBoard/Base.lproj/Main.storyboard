@@ -97,6 +97,9 @@
                                     <constraint firstAttribute="width" constant="24" id="sTY-tY-SZc"/>
                                 </constraints>
                                 <state key="normal" image="ic_exit"/>
+                                <connections>
+                                    <action selector="onTouchClose:" destination="rha-nY-Xxi" eventType="touchUpInside" id="4Ot-vD-7RY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>

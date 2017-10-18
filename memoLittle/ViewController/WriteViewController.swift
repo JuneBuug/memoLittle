@@ -42,6 +42,7 @@ class WriteViewController: UIViewController {
     @objc func sth(){
         let obj = LittleLine()
         obj.objectName = textView.text
+        obj.personName = writer.name
         obj.writer = writer
         obj.category = 0
         obj.id = UUID().uuidString
