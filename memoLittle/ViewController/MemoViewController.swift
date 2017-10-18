@@ -48,4 +48,11 @@ extension MemoViewController : UITableViewDelegate,UITableViewDataSource {
         cell.textLabel?.text = "준킴"
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "WriteViewController") as! WriteViewController
+        self.present(vc, animated: true, completion: nil)
+    }
 }

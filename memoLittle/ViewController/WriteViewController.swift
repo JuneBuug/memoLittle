@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import RealmSwift
 
 class WriteViewController: UIViewController {
 
     @IBOutlet weak var textView: UITextView!
+
+    let realm = try! Realm()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,7 +39,16 @@ class WriteViewController: UIViewController {
     }
     
     @objc func sth(){
-        print("버튼 눌러졌습니다.")
+        let obj = LittleLine()
+        obj.objectName = textView.text
+        obj.personName = "준키미"
+        obj.category = 0
+        obj.id = UUID().uuidString
+        try! realm.write{
+            realm.add(obj)
+        }
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
 
     @IBAction func onTouchClose(_ sender: Any) {

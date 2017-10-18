@@ -14,10 +14,11 @@ class LittleLineViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var list = List<LittleLine>()
+    var list : Results<LittleLine>!
+    var notificationToken: NotificationToken!
+    var realm: Realm!
     
-    
-    var filtered_list = List<LittleLine>()
+    var filtered_list : Results<LittleLine>!
     
     let searchController = UISearchController(searchResultsController: nil)
 
@@ -34,7 +35,9 @@ class LittleLineViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        list.append(LittleLine(value: ["category":0 , "personName":"뫄뫄","objectName":"떡볶이","id":1]))
+        // Realm init
+        setupRealm()
+        list = realm.objects(LittleLine.self)
         tableView.dataSource = self
         tableView.delegate = self
         searchController.searchResultsUpdater = self
@@ -47,8 +50,22 @@ class LittleLineViewController: UIViewController {
         tableView.register(UINib(nibName: "LittleLineLikeTableViewCell", bundle: nil), forCellReuseIdentifier: "LittleLineLikeTableViewCell")
         tableView.register(UINib(nibName: "LittleLineEventTableViewCell", bundle: nil), forCellReuseIdentifier: "LittleLineEventTableViewCell")
         // Do any additional setup after loading the view.
+        
     }
 
+    func setupRealm() {
+        // Log in existing user with username and password
+        do {
+            realm = try Realm()
+        } catch {
+            print("\(error)")
+        }
+    }
+    
+    deinit {
+        notificationToken.stop()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -64,10 +81,9 @@ class LittleLineViewController: UIViewController {
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        filtered_list = list.filter({( line : LittleLine) -> Bool in
-            return line.objectName.lowercased().contains(searchText.lowercased()) || line.personName.lowercased().contains(searchText.lowercased())
-        })
-        
+//      
+//        filtered_list = realm.objects(LittleLine.self).filter("personName CONTAINS[c]%@",searchText)
+
         tableView.reloadData()
     }
     
@@ -119,9 +135,9 @@ extension LittleLineViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             
-            list.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-            tableView.reloadData()
+//            list.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .automatic)
+//            tableView.reloadData()
         }
     }
     
