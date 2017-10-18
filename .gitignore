@@ -22,6 +22,7 @@ fastlane/test_output
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
+*.xcworkspace/xcuserdata
 /*.gcno
 
 # End of https://www.gitignore.io/api/macos,swift,xcode

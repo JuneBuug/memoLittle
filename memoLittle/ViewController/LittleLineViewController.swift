@@ -8,11 +8,16 @@
 
 import UIKit
 import AVFoundation
+import RealmSwift
+
 class LittleLineViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var list = [LittleLine(category: 0, personName: "뫄뫄",objectName: "떡볶이",id: 1),LittleLine(category: 0, personName: "준킴",objectName: "족발막국수",id: 2),LittleLine(category: 1, personName: "탐",objectName: "처음만난날",id: 3),LittleLine(category: 0, personName: "준",objectName: "유자차",id: 4)]
-    var filtered_list: Array<LittleLine> = []
+    
+    var list = List<LittleLine>()
+    
+    
+    var filtered_list = List<LittleLine>()
     
     let searchController = UISearchController(searchResultsController: nil)
 
@@ -29,7 +34,7 @@ class LittleLineViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        list.append(LittleLine(value: ["category":0 , "personName":"뫄뫄","objectName":"떡볶이","id":1]))
         tableView.dataSource = self
         tableView.delegate = self
         searchController.searchResultsUpdater = self
