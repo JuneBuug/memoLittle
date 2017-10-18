@@ -20,7 +20,11 @@ class MemoViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-    
+        setupRealm()
+        list = realm.objects(Person.self)
+        notificationToken = list.addNotificationBlock({ (change) in
+            self.tableView.reloadData()
+        })
         // Do any additional setup after loading the view.
     }
 
@@ -29,6 +33,14 @@ class MemoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func setupRealm() {
+        // Log in existing user with username and password
+        do {
+            realm = try Realm()
+        } catch {
+            print("\(error)")
+        }
+    }
     // 사람 추가 view로 이동
     @IBAction func onTouchAddBtn(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -51,13 +63,13 @@ class MemoViewController: UIViewController {
 extension MemoViewController : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.accessoryType = .none
-        cell.textLabel?.text = "준킴"
+        cell.textLabel?.text = list[indexPath.row].name + " | " + list[indexPath.row].relationship
         return cell
     }
     
@@ -65,6 +77,7 @@ extension MemoViewController : UITableViewDelegate,UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: false)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "WriteViewController") as! WriteViewController
+        vc.writer = list[indexPath.row]
         self.present(vc, animated: true, completion: nil)
     }
 }

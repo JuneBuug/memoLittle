@@ -12,6 +12,7 @@ import RealmSwift
 class WriteViewController: UIViewController {
 
     @IBOutlet weak var textView: UITextView!
+    var writer = Person()
 
     let realm = try! Realm()
     override func viewDidLoad() {
@@ -41,7 +42,7 @@ class WriteViewController: UIViewController {
     @objc func sth(){
         let obj = LittleLine()
         obj.objectName = textView.text
-//        obj.personName = "준키미"
+        obj.writer = writer
         obj.category = 0
         obj.id = UUID().uuidString
         try! realm.write{
