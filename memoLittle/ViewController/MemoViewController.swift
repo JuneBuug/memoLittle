@@ -86,7 +86,12 @@ extension MemoViewController : UITableViewDelegate,UITableViewDataSource {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "삭제") { (deleteAction, indexPath) in
             do {
                 try self.realm.write {
+                    var events = self.realm.objects(LittleLine.self).filter("writer = %@",self.list[indexPath.row])
+                    for event in events {
+                        self.realm.delete(event)
+                    }
                     self.realm.delete(self.list[indexPath.row])
+                    
                 }
             } catch {
                 print("\(error)")
