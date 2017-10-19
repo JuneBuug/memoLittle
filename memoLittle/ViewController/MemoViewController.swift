@@ -80,4 +80,23 @@ extension MemoViewController : UITableViewDelegate,UITableViewDataSource {
         vc.writer = list[indexPath.row]
         self.present(vc, animated: true, completion: nil)
     }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        // realm delete
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "삭제") { (deleteAction, indexPath) in
+            do {
+                try self.realm.write {
+                    self.realm.delete(self.list[indexPath.row])
+                }
+            } catch {
+                print("\(error)")
+            }
+        }
+        
+        let editAction = UITableViewRowAction(style: .normal, title: "편집") { (editAction, indexPath) in
+            //            self.alertForAlbumTitle(albumToBeUpdated: self.albums[indexPath.row])
+        }
+        return [deleteAction, editAction]
+    }
+    
 }
