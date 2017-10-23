@@ -1,5 +1,7 @@
 # 메모리틀 MEMOLITTLE
 
+[프로젝트 제안서 링크](https://drive.google.com/open?id=0Bw5Hv-zbPEnYWEtYMjEyNHoyOEE)
+
 ```
 사람에 대한 소소한 사실을 기록하는 메모 앱인데 이름은 메모리틀
 
