@@ -25,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E10723D1FAAE3CB002674D4 /* memoLittle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = memoLittle.entitlements; sourceTree = "<group>"; };
 		0E238CD91F90A16B008330D6 /* LittleLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleLineViewController.swift; sourceTree = "<group>"; };
 		0E238CDF1F90A58D008330D6 /* LittleLineLikeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleLineLikeTableViewCell.swift; sourceTree = "<group>"; };
 		0E238CE01F90A58D008330D6 /* LittleLineLikeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LittleLineLikeTableViewCell.xib; sourceTree = "<group>"; };
@@ -128,6 +129,7 @@
 		0E3095231F8FB09B00A2F7D3 /* memoLittle */ = {
 			isa = PBXGroup;
 			children = (
+				0E10723D1FAAE3CB002674D4 /* memoLittle.entitlements */,
 				0E3095301F8FB09B00A2F7D3 /* Info.plist */,
 				0E238CD81F90A146008330D6 /* StoryBoard */,
 				0E238CD41F90A124008330D6 /* View */,
@@ -191,6 +193,11 @@
 					0E3095201F8FB09B00A2F7D3 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.WAC = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -434,6 +441,7 @@
 			baseConfigurationReference = AF47D39B400D2F65BC775A88 /* Pods-memoLittle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FX8Z34KJ9H;
 				INFOPLIST_FILE = memoLittle/Info.plist;
@@ -441,6 +449,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.junebuug.memoLittle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -451,6 +460,7 @@
 			baseConfigurationReference = 883B577E3613F91F481977A2 /* Pods-memoLittle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FX8Z34KJ9H;
 				INFOPLIST_FILE = memoLittle/Info.plist;
@@ -458,6 +468,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.junebuug.memoLittle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
