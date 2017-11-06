@@ -224,8 +224,8 @@
                         </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
-                        <segue destination="sst-3G-5jA" kind="relationship" relationship="viewControllers" id="sxw-o0-MmQ"/>
                         <segue destination="iuW-30-HaE" kind="relationship" relationship="viewControllers" id="LBI-xV-og6"/>
+                        <segue destination="sst-3G-5jA" kind="relationship" relationship="viewControllers" id="sxw-o0-MmQ"/>
                         <segue destination="BEW-Bi-Hgy" kind="relationship" relationship="viewControllers" id="yfd-Xj-X1M"/>
                     </connections>
                 </tabBarController>
