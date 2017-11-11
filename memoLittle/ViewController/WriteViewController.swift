@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Intents
 
 class WriteViewController: UIViewController {
 
@@ -18,6 +19,10 @@ class WriteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        INPreferences.requestSiriAuthorization { (status) in
+            
+        }
+      
         let keyboardToolbar = UIToolbar()
         keyboardToolbar.sizeToFit()
         keyboardToolbar.isTranslucent = false
