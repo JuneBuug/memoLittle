@@ -44,7 +44,10 @@ class MemoViewController: UIViewController {
     // 사람 추가 view로 이동
     @IBAction func onTouchAddBtn(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "AddPersonViewController") as! AddPersonViewController
+//        let vc = storyboard.instantiateViewController(withIdentifier: "AddPersonViewController") as! AddPersonViewController
+//        self.present(vc, animated: true, completion: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "WriteViewController") as! WriteViewController
+        vc.writer = list.first!
         self.present(vc, animated: true, completion: nil)
     }
     
@@ -76,8 +79,11 @@ extension MemoViewController : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "WriteViewController") as! WriteViewController
-        vc.writer = list[indexPath.row]
+//        let vc = storyboard.instantiateViewController(withIdentifier: "WriteViewController") as! WriteViewController
+//        vc.writer = list[indexPath.row]
+//        self.present(vc, animated: true, completion: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "PersonDetailViewController") as! PersonDetailViewController
+        vc.person = list[indexPath.row]
         self.present(vc, animated: true, completion: nil)
     }
     
