@@ -12,8 +12,6 @@ import RealmSwift
 class WriteViewController: UIViewController,UITextViewDelegate {
 
     @IBOutlet weak var textView: UITextView!
-    var writer = Person()
-
     let realm = try! Realm()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,15 +40,29 @@ class WriteViewController: UIViewController,UITextViewDelegate {
     
     
     @objc func writeMemo(){
-        let obj = LittleLine()
-        obj.objectName = textView.text
-        obj.personName = writer.name
-        obj.writer = writer
-        obj.category = 0
-        obj.id = UUID().uuidString
-        try! realm.write{
-            realm.add(obj)
+        if checkandReturnMention(text: textView.text).0 {
+            let mentionedName = checkandReturnMention(text: textView.text).1
+            let obj = LittleLine()
+            let writer = Person()
+            obj.objectName = textView.text.replacingOccurrences(of: "@"+mentionedName, with: "")
+            obj.personName = mentionedName
+            writer.name = mentionedName
+            obj.writer = writer
+            obj.category = 0
+            try! realm.write{
+                realm.add(writer)
+                realm.add(obj)
+            }
+        }else{
+            let obj = LittleLine()
+            let writer = Person()
+            obj.objectName = textView.text
+            obj.category = 0
+            try! realm.write{
+                realm.add(obj)
+            }
         }
+       
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
     }
@@ -84,6 +96,7 @@ class WriteViewController: UIViewController,UITextViewDelegate {
             {
                 let regex = try! NSRegularExpression(pattern: searchString,options: .caseInsensitive)
                 for match in regex.matches(in: baseString, options: NSRegularExpression.MatchingOptions(), range: NSRange(location: 0, length: baseString.characters.count)) as [NSTextCheckingResult] {
+                    attributed.addAttribute(NSAttributedStringKey.font, value: UIFont.systemFont(ofSize: 14.0), range: match.range)
                     attributed.addAttribute(NSAttributedStringKey.foregroundColor, value: hightlightColor, range: match.range)
                 }
                 DispatchQueue.main.async{
@@ -109,3 +122,5 @@ class WriteViewController: UIViewController,UITextViewDelegate {
     */
 
 }
+
+
