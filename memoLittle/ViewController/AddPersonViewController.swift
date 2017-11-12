@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 
 class AddPersonViewController: UIViewController {
+    // 사람 정보 수정 View로 적용
 
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var relationship: UITextView!
