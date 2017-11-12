@@ -13,6 +13,7 @@ class WriteViewController: UIViewController,UITextViewDelegate {
 
     @IBOutlet weak var textView: UITextView!
     let realm = try! Realm()
+    var placeholderLabel : UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +31,16 @@ class WriteViewController: UIViewController,UITextViewDelegate {
         keyboardToolbar.items = [addButton]
         textView.inputAccessoryView = keyboardToolbar
         textView.delegate = self
+        textView.becomeFirstResponder()
+        
+        placeholderLabel = UILabel()
+        placeholderLabel.text = "@로 사람을 태그하고, 메모를 적어주세요 :)"
+        placeholderLabel.font = UIFont.italicSystemFont(ofSize: (textView.font?.pointSize)!)
+        placeholderLabel.sizeToFit()
+        textView.addSubview(placeholderLabel)
+        placeholderLabel.frame.origin = CGPoint(x: 5, y: (textView.font?.pointSize)! / 2)
+        placeholderLabel.textColor = UIColor.lightGray
+        placeholderLabel.isHidden = !textView.text.isEmpty
         // Do any additional setup after loading the view.
     }
 
@@ -84,7 +95,10 @@ class WriteViewController: UIViewController,UITextViewDelegate {
         return (false,"")
     }
     
+    
+    // 편집 중일 때
     func textViewDidChange(_ textView: UITextView){
+        placeholderLabel.isHidden = !textView.text.isEmpty
         
         if checkandReturnMention(text: textView.text).0 {
             let searchString = checkandReturnMention(text: textView.text).1
