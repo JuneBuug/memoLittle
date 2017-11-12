@@ -32,6 +32,8 @@ class AddPersonViewController: UIViewController {
     @IBAction func onTouchWrite(_ sender: Any) {
         // 사람 정보를 수정
         // Query and update from any thread
+        let name = self.textView.text!
+        let relationship = self.relationship.text!
         let personRef = ThreadSafeReference(to: person)
         // thread conflict 제거용
         DispatchQueue(label: "background").async {
@@ -41,8 +43,8 @@ class AddPersonViewController: UIViewController {
                     return // person was deleted
                 }
                 try! realm.write {
-                    person.name = self.textView.text
-                    person.relationship = self.relationship.text
+                    person.name = name
+                    person.relationship = relationship
                 }
             }
         }
