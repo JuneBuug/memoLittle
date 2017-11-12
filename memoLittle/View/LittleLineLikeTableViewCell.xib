@@ -21,8 +21,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="165.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당근케이크" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Io5-OX-qSK">
-                        <rect key="frame" x="123" y="73" width="74" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당근케이크" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Io5-OX-qSK">
+                        <rect key="frame" x="32" y="73" width="256" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -82,6 +82,7 @@
                     <constraint firstItem="Io5-OX-qSK" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="c2W-cy-g58"/>
                     <constraint firstItem="4fh-61-sTs" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="dNT-cB-5cX"/>
                     <constraint firstItem="IOH-w5-hF1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="l9L-Y1-WuZ"/>
+                    <constraint firstItem="Io5-OX-qSK" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" constant="-64" id="qNm-cQ-eZT"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

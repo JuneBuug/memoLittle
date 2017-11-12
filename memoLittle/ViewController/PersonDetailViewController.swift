@@ -92,12 +92,12 @@ extension PersonDetailViewController : UITableViewDelegate, UITableViewDataSourc
         
         if list[indexPath.row].category == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "LittleLineLikeTableViewCell",for: indexPath) as! LittleLineLikeTableViewCell
-//            cell.personName.text? = (list[indexPath.row].writer?.name)!
+            cell.personName.text? = (list[indexPath.row].writer?.name)!
             cell.likeObject.text? = list[indexPath.row].objectName
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "LittleLineEventTableViewCell",for: indexPath) as! LittleLineEventTableViewCell
-//            cell.personName.text? = (list[indexPath.row].writer?.name)!
+            cell.personName.text? = (list[indexPath.row].writer?.name)!
             cell.eventLabel.text? = list[indexPath.row].objectName
             return cell
         }
