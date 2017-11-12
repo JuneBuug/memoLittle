@@ -79,3 +79,7 @@
 
 
 <img src="screenshots/screenshot2.png" alt="검색화면" width= "40%" />
+
+타임라인을 제거하고 사람별로 분류한 화면과 메모 작성 화면으로 나누기로함.
+탭바를 없애는 게 더 나을지도.
+<img src="screenshots/screenshot3.png" alt="사람정보디테일화면" width= "40%" />
