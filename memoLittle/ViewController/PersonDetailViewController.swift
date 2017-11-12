@@ -33,9 +33,7 @@ class PersonDetailViewController: UIViewController {
         tableView.register(UINib(nibName: "LittleLineLikeTableViewCell", bundle: nil), forCellReuseIdentifier: "LittleLineLikeTableViewCell")
         tableView.register(UINib(nibName: "LittleLineEventTableViewCell", bundle: nil), forCellReuseIdentifier: "LittleLineEventTableViewCell")
         
-        if realm.objects(LittleLine.self) != nil {
-            list = realm.objects(LittleLine.self)
-        }
+        list = realm.objects(LittleLine.self)
         notificationToken = list.addNotificationBlock({ (change) in
             self.tableView.reloadData()
         })

@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 
 class MemoViewController: UIViewController {
+    //사람 목록 view
 
     @IBOutlet weak var tableView: UITableView!
     var list : Results<Person>!
@@ -105,7 +106,11 @@ extension MemoViewController : UITableViewDelegate,UITableViewDataSource {
         }
         
         let editAction = UITableViewRowAction(style: .normal, title: "편집") { (editAction, indexPath) in
-            //            self.alertForAlbumTitle(albumToBeUpdated: self.albums[indexPath.row])
+            // 사람 기본정보 수정 가능
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "AddPersonViewController") as! AddPersonViewController
+            vc.person = self.list[indexPath.row]
+            self.present(vc, animated: true, completion: nil)
         }
         return [deleteAction, editAction]
     }

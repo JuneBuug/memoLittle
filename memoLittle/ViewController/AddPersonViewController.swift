@@ -15,8 +15,11 @@ class AddPersonViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var relationship: UITextView!
     let realm = try! Realm()
+    var person = Person()
     override func viewDidLoad() {
         super.viewDidLoad()
+        textView.text = person.name
+        relationship.text = person.relationship
 
         // Do any additional setup after loading the view.
     }
@@ -27,11 +30,21 @@ class AddPersonViewController: UIViewController {
     }
     
     @IBAction func onTouchWrite(_ sender: Any) {
-        let obj = Person()
-        obj.name = textView.text
-        obj.relationship = relationship.text
-        try! realm.write{
-            realm.add(obj)
+        // 사람 정보를 수정
+        // Query and update from any thread
+        let personRef = ThreadSafeReference(to: person)
+        // thread conflict 제거용
+        DispatchQueue(label: "background").async {
+            autoreleasepool {
+                let realm = try! Realm()
+                guard let person = realm.resolve(personRef) else {
+                    return // person was deleted
+                }
+                try! realm.write {
+                    person.name = self.textView.text
+                    person.relationship = self.relationship.text
+                }
+            }
         }
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
