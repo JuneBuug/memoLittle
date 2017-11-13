@@ -14,9 +14,15 @@ class WriteViewController: UIViewController,UITextViewDelegate {
     @IBOutlet weak var textView: UITextView!
     let realm = try! Realm()
     var placeholderLabel : UILabel!
+    
+    var list : Results<Person>! // 현재 등록되어 있는 사람 목록
+    var notificationToken: NotificationToken!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        list = realm.objects(Person.self)
+        
         let keyboardToolbar = UIToolbar()
         keyboardToolbar.sizeToFit()
         keyboardToolbar.isTranslucent = false
@@ -52,12 +58,20 @@ class WriteViewController: UIViewController,UITextViewDelegate {
     
     @objc func writeMemo(){
         if checkandReturnMention(text: textView.text).0 {
+            
+            var writer = Person()
             let mentionedName = checkandReturnMention(text: textView.text).1
+            let foundList = list.filter("name == [c]%@",mentionedName)
+            
+            if let person = foundList.first  {
+                writer = person
+            }else{
+                 writer.name = mentionedName
+            }
+            
             let obj = LittleLine()
-            let writer = Person()
             obj.objectName = textView.text.replacingOccurrences(of: "@"+mentionedName, with: "")
             obj.personName = mentionedName
-            writer.name = mentionedName
             obj.writer = writer
             obj.category = 0
             try! realm.write{
@@ -66,18 +80,17 @@ class WriteViewController: UIViewController,UITextViewDelegate {
             }
         }else{
             let obj = LittleLine()
-            let writer = Person()
             obj.objectName = textView.text
             obj.category = 0
             try! realm.write{
                 realm.add(obj)
             }
         }
-       
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
     }
 
+    // mention 이 있는 지 여부를 확인하고 있다면 mention name을 return 하는 함수
     func checkandReturnMention(text: String) -> (Bool,String){
         
         if text.contains("@") {
