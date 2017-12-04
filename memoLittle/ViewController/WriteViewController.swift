@@ -71,10 +71,12 @@ class WriteViewController: UIViewController,UITextViewDelegate {
     
     
     @objc func writeMemo(){
+        let tagList = checkandReturnHashtag(text: textView.text)
         if checkandReturnMention(text: textView.text).0 {
             
             var writer = Person()
             let mentionedName = checkandReturnMention(text: textView.text).1
+           
             let foundList = list.filter("name == [c]%@",mentionedName)
             
             if let person = foundList.first  {
@@ -84,12 +86,16 @@ class WriteViewController: UIViewController,UITextViewDelegate {
             }
             
             let obj = LittleLine()
-            obj.objectName = textView.text.replacingOccurrences(of: "@"+mentionedName, with: "")
+            var str = textView.text.replacingOccurrences(of: "@"+mentionedName, with: "")
+            for tag in tagList{
+                obj.tags.append(RealmString(value: ["stringValue":tag]))
+                str = str.replacingOccurrences(of: "#"+tag, with: "")
+            }
+           
+            obj.objectName = str
             obj.personName = mentionedName
             obj.writer = writer
-            for tag in checkandReturnHashtag(text: textView.text){
-                obj.tags.append(RealmString(value: ["stringValue":tag]))
-            }
+           
             obj.category = 0
             try! realm.write{
                 realm.add(writer)
@@ -98,11 +104,13 @@ class WriteViewController: UIViewController,UITextViewDelegate {
         }else{
             //TODO mention이 없다면 처리
             let obj = LittleLine()
-            obj.objectName = textView.text
+            var str = textView.text
             obj.category = 0
-            for tag in checkandReturnHashtag(text: textView.text){
+            for tag in tagList{
                 obj.tags.append(RealmString(value: ["stringValue":tag]))
+                str = str?.replacingOccurrences(of: "#"+tag, with: "")
             }
+            obj.objectName = str!
             try! realm.write{
                 realm.add(obj)
             }
