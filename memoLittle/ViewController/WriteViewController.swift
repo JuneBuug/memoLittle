@@ -28,13 +28,25 @@ class WriteViewController: UIViewController,UITextViewDelegate {
         keyboardToolbar.isTranslucent = false
         keyboardToolbar.barTintColor = UIColor.white
         
-        let addButton = UIBarButtonItem(
-            barButtonSystemItem: .done,
+        // 작성완료 버튼
+        let doneButton = UIBarButtonItem(
+            barButtonSystemItem: .save,
             target: self,
             action: #selector(writeMemo)
         )
-        addButton.tintColor = UIColor.black
-        keyboardToolbar.items = [addButton]
+        
+        // 더 작성하기 버튼
+        let moreButton = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(moreMemo)
+        )
+        doneButton.tintColor = UIColor.black
+        moreButton.tintColor = UIColor.black
+        
+        keyboardToolbar.items = [doneButton,moreButton]
+        
+        
         textView.inputAccessoryView = keyboardToolbar
         textView.delegate = self
         textView.becomeFirstResponder()
@@ -79,6 +91,7 @@ class WriteViewController: UIViewController,UITextViewDelegate {
                 realm.add(obj)
             }
         }else{
+            //TODO mention이 없다면 처리
             let obj = LittleLine()
             obj.objectName = textView.text
             obj.category = 0
@@ -88,6 +101,40 @@ class WriteViewController: UIViewController,UITextViewDelegate {
         }
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func moreMemo(){
+        if checkandReturnMention(text: textView.text).0 {
+            
+            var writer = Person()
+            let mentionedName = checkandReturnMention(text: textView.text).1
+            let foundList = list.filter("name == [c]%@",mentionedName)
+            
+            if let person = foundList.first  {
+                writer = person
+            }else{
+                writer.name = mentionedName
+            }
+            
+            let obj = LittleLine()
+            obj.objectName = textView.text.replacingOccurrences(of: "@"+mentionedName, with: "")
+            obj.personName = mentionedName
+            obj.writer = writer
+            obj.category = 0
+            try! realm.write{
+                realm.add(writer)
+                realm.add(obj)
+            }
+        }else{
+            //TODO mention이 없다면 처리
+            let obj = LittleLine()
+            obj.objectName = textView.text
+            obj.category = 0
+            try! realm.write{
+                realm.add(obj)
+            }
+        }
+        textView.text = ""
     }
 
     // mention 이 있는 지 여부를 확인하고 있다면 mention name을 return 하는 함수

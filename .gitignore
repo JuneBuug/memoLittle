@@ -1,6 +1,7 @@
 Pods/
 Podfile.lock
-
+*.mov
+*.sketch
 
 fastlane/Preview.html
 fastlane/screenshots
