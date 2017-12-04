@@ -185,23 +185,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mPn-LB-AWz">
-                                <rect key="frame" x="20" y="20" width="374" height="667"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ogX-hf-opD">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <color key="barTintColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="설정 Settings" largeTitleDisplayMode="never" id="S4y-V9-TC8"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Fw-ph-mJ7">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="mPn-LB-AWz" firstAttribute="top" secondItem="YNb-BF-gmt" secondAttribute="topMargin" id="DaT-A9-No2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mPn-LB-AWz" secondAttribute="trailing" id="GqM-qe-jRX"/>
-                            <constraint firstItem="mPn-LB-AWz" firstAttribute="leading" secondItem="YNb-BF-gmt" secondAttribute="leadingMargin" id="U9t-wj-uAh"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="mPn-LB-AWz" secondAttribute="bottom" id="esZ-r5-k2p"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="4Fw-ph-mJ7" secondAttribute="bottom" id="9La-9A-ups"/>
+                            <constraint firstItem="rfZ-8b-KhC" firstAttribute="trailing" secondItem="ogX-hf-opD" secondAttribute="trailing" id="KTb-Ue-maY"/>
+                            <constraint firstItem="ogX-hf-opD" firstAttribute="top" secondItem="rfZ-8b-KhC" secondAttribute="top" id="V4J-wg-Vvu"/>
+                            <constraint firstItem="ogX-hf-opD" firstAttribute="trailing" secondItem="4Fw-ph-mJ7" secondAttribute="trailing" id="aOJ-vh-9Za"/>
+                            <constraint firstItem="ogX-hf-opD" firstAttribute="leading" secondItem="rfZ-8b-KhC" secondAttribute="leading" id="ckI-4y-nkm"/>
+                            <constraint firstItem="4Fw-ph-mJ7" firstAttribute="top" secondItem="ogX-hf-opD" secondAttribute="bottom" id="jjk-lY-ixr"/>
+                            <constraint firstItem="4Fw-ph-mJ7" firstAttribute="width" secondItem="YNb-BF-gmt" secondAttribute="width" id="oYM-MY-O6F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rfZ-8b-KhC"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="설정 Settings" image="ic_more" id="egA-d4-Bnc"/>
                     <connections>
-                        <outlet property="tableView" destination="mPn-LB-AWz" id="5ix-MO-oWT"/>
+                        <outlet property="tableView" destination="4Fw-ph-mJ7" id="nIH-vy-P8T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qCo-aG-1gv" userLabel="First Responder" sceneMemberID="firstResponder"/>

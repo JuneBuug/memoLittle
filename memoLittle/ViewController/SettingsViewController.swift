@@ -11,9 +11,11 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var list  = ["접근성 설정","개인정보","테마 설정"]
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tableView.delegate = self
+        tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
 
@@ -33,4 +35,27 @@ class SettingsViewController: UIViewController {
     }
     */
 
+
+}
+
+extension SettingsViewController : UITableViewDelegate,UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return list.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.accessoryType = .none
+        cell.textLabel?.text = list[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        //            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //            let vc = storyboard.instantiateViewController(withIdentifier: "PersonDetailViewController") as! PersonDetailViewController
+        //            self.present(vc, animated: true, completion: nil)
+    }
+    
 }
