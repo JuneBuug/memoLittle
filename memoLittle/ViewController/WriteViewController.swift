@@ -41,7 +41,8 @@ class WriteViewController: UIViewController,UITextViewDelegate {
             target: self,
             action: #selector(moreMemo)
         )
-        doneButton.tintColor = UIColor.black
+        let hightlightColor = UIColor(red: 0.0/255.0, green: 175.0/255.0, blue: 126.0/255.0, alpha: 1.0)
+        doneButton.tintColor = hightlightColor
         moreButton.tintColor = UIColor.black
         
         keyboardToolbar.items = [doneButton,moreButton]
@@ -155,6 +156,26 @@ class WriteViewController: UIViewController,UITextViewDelegate {
         return (false,"")
     }
     
+    // hashtag 가 있는 지 여부를 확인하고 있으면 hashtag return
+    func checkandReturnHashtag(text: String) -> ([String]){
+        
+        var hashtags : [String] = []
+        if text.contains("#") {
+            let textArr = text.split(separator: " ")
+            
+            for word in textArr {
+                if word.starts(with: "#"){
+                    if word.count > 1 {
+                        let name = word.dropFirst()
+                        hashtags.append(String(name))
+                    }
+                }
+            }
+        }
+        
+        return hashtags
+    }
+    
     
     // 편집 중일 때
     func textViewDidChange(_ textView: UITextView){
@@ -175,6 +196,26 @@ class WriteViewController: UIViewController,UITextViewDelegate {
                 }
                 DispatchQueue.main.async{
                     self.textView.attributedText = attributed
+                }
+            }
+        }
+        
+        if checkandReturnHashtag(text: textView.text) != [] {
+            for searchString in checkandReturnHashtag(text: textView.text){
+                let baseString = textView.text!
+                
+                let attributed = NSMutableAttributedString(string: baseString)
+                let hightlightColor = UIColor(red: 0.0/255.0, green: 175.0/255.0, blue: 126.0/255.0, alpha: 1.0)
+                do
+                {
+                    let regex = try! NSRegularExpression(pattern: searchString,options: .caseInsensitive)
+                    for match in regex.matches(in: baseString, options: NSRegularExpression.MatchingOptions(), range: NSRange(location: 0, length: baseString.characters.count)) as [NSTextCheckingResult] {
+                        attributed.addAttribute(NSAttributedStringKey.font, value: UIFont.systemFont(ofSize: 14.0), range: match.range)
+                        attributed.addAttribute(NSAttributedStringKey.foregroundColor, value: hightlightColor, range: match.range)
+                    }
+                    DispatchQueue.main.async{
+                        self.textView.attributedText = attributed
+                    }
                 }
             }
         }
