@@ -87,6 +87,9 @@ class WriteViewController: UIViewController,UITextViewDelegate {
             obj.objectName = textView.text.replacingOccurrences(of: "@"+mentionedName, with: "")
             obj.personName = mentionedName
             obj.writer = writer
+            for tag in checkandReturnHashtag(text: textView.text){
+                obj.tags.append(RealmString(value: ["stringValue":tag]))
+            }
             obj.category = 0
             try! realm.write{
                 realm.add(writer)
@@ -97,6 +100,9 @@ class WriteViewController: UIViewController,UITextViewDelegate {
             let obj = LittleLine()
             obj.objectName = textView.text
             obj.category = 0
+            for tag in checkandReturnHashtag(text: textView.text){
+                obj.tags.append(RealmString(value: ["stringValue":tag]))
+            }
             try! realm.write{
                 realm.add(obj)
             }

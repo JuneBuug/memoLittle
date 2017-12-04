@@ -12,6 +12,7 @@ class LittleLineLikeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var personName: UILabel!
     @IBOutlet weak var likeObject: UILabel!
+    @IBOutlet weak var tags: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

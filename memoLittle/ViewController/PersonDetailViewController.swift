@@ -94,6 +94,18 @@ extension PersonDetailViewController : UITableViewDelegate, UITableViewDataSourc
             let cell = tableView.dequeueReusableCell(withIdentifier: "LittleLineLikeTableViewCell",for: indexPath) as! LittleLineLikeTableViewCell
             cell.personName.text? = (list[indexPath.row].writer?.name)!
             cell.likeObject.text? = list[indexPath.row].objectName
+            
+            if list[indexPath.row].tags.first?.stringValue != "" {
+                cell.tags.isHidden = false
+                var str = ""
+                for tag in list[indexPath.row].tags {
+                    str += "#"+tag.stringValue+" "
+                }
+                cell.tags.text = str
+            }else{
+                cell.tags.isHidden = true
+            }
+            
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "LittleLineEventTableViewCell",for: indexPath) as! LittleLineEventTableViewCell
