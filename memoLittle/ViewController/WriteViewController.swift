@@ -17,6 +17,7 @@ class WriteViewController: UIViewController,UITextViewDelegate {
     
     var list : Results<Person>! // 현재 등록되어 있는 사람 목록
     var notificationToken: NotificationToken!
+    var attributed : NSMutableAttributedString! // String attr
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -180,12 +181,12 @@ class WriteViewController: UIViewController,UITextViewDelegate {
     // 편집 중일 때
     func textViewDidChange(_ textView: UITextView){
         placeholderLabel.isHidden = !textView.text.isEmpty
-        
+        attributed = NSMutableAttributedString(string : textView.text)
         if checkandReturnMention(text: textView.text).0 {
             let searchString = checkandReturnMention(text: textView.text).1
             let baseString = textView.text!
             
-            let attributed = NSMutableAttributedString(string: baseString)
+            
             let hightlightColor = UIColor(red: 0.0/255.0, green: 175.0/255.0, blue: 126.0/255.0, alpha: 1.0)
             do
             {
@@ -195,7 +196,7 @@ class WriteViewController: UIViewController,UITextViewDelegate {
                     attributed.addAttribute(NSAttributedStringKey.foregroundColor, value: hightlightColor, range: match.range)
                 }
                 DispatchQueue.main.async{
-                    self.textView.attributedText = attributed
+                    self.textView.attributedText = self.attributed
                 }
             }
         }
@@ -204,8 +205,7 @@ class WriteViewController: UIViewController,UITextViewDelegate {
             for searchString in checkandReturnHashtag(text: textView.text){
                 let baseString = textView.text!
                 
-                let attributed = NSMutableAttributedString(string: baseString)
-                let hightlightColor = UIColor(red: 0.0/255.0, green: 175.0/255.0, blue: 126.0/255.0, alpha: 1.0)
+                let hightlightColor = UIColor(red: 255.0/255.0, green: 197.0/255.0, blue: 6.0/255.0, alpha: 1.0)
                 do
                 {
                     let regex = try! NSRegularExpression(pattern: searchString,options: .caseInsensitive)
@@ -214,7 +214,7 @@ class WriteViewController: UIViewController,UITextViewDelegate {
                         attributed.addAttribute(NSAttributedStringKey.foregroundColor, value: hightlightColor, range: match.range)
                     }
                     DispatchQueue.main.async{
-                        self.textView.attributedText = attributed
+                        self.textView.attributedText = self.attributed
                     }
                 }
             }
