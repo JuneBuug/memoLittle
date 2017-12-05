@@ -86,7 +86,10 @@ class IntentHandler: INExtension, INSendMessageIntentHandling, INSearchForMessag
     
     func handle(intent: INSendMessageIntent, completion: @escaping (INSendMessageIntentResponse) -> Void) {
         // Implement your application logic to send a message here.
-        Memo(contents: intent.content!, writer: (intent.recipients?.first?.displayName)!).save()
+        print(intent.content)
+        print(intent.recipients?.first?.displayName)
+        let memo = Memo(contents: intent.content!, writer: (intent.recipients?.first?.displayName)!)
+        memo.save()
         
         let userActivity = NSUserActivity(activityType: NSStringFromClass(INSendMessageIntent.self))
         let response = INSendMessageIntentResponse(code: .success, userActivity: userActivity)
