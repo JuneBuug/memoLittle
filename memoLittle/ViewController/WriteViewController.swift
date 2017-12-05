@@ -222,7 +222,7 @@ class WriteViewController: UIViewController,UITextViewDelegate {
                 let hightlightColor = UIColor(red: 255.0/255.0, green: 197.0/255.0, blue: 6.0/255.0, alpha: 1.0)
                 do
                 {
-                    let regex = try! NSRegularExpression(pattern: searchString,options: .caseInsensitive)
+                    let regex = try! NSRegularExpression(pattern: "#"+searchString,options: .caseInsensitive)
                     for match in regex.matches(in: baseString, options: NSRegularExpression.MatchingOptions(), range: NSRange(location: 0, length: baseString.characters.count)) as [NSTextCheckingResult] {
                         attributed.addAttribute(NSAttributedStringKey.font, value: UIFont.systemFont(ofSize: 14.0), range: match.range)
                         attributed.addAttribute(NSAttributedStringKey.foregroundColor, value: hightlightColor, range: match.range)
