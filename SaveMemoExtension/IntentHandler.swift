@@ -1,8 +1,8 @@
 //
 //  IntentHandler.swift
-//  IntentsHandler
+//  SaveMemoExtension
 //
-//  Created by 준킴 on 2017. 11. 11..
+//  Created by 준킴 on 2017. 12. 5..
 //  Copyright © 2017년 junebuug. All rights reserved.
 //
 
@@ -22,9 +22,9 @@ class IntentHandler: INExtension, INSendMessageIntentHandling, INSearchForMessag
     override func handler(for intent: INIntent) -> Any {
         // This is the default implementation.  If you want different objects to handle different intents,
         // you can override this and return the handler you want for that particular intent.
+        
         return self
     }
-
     
     // MARK: - INSendMessageIntentHandling
     
@@ -88,7 +88,6 @@ class IntentHandler: INExtension, INSendMessageIntentHandling, INSearchForMessag
         
         let userActivity = NSUserActivity(activityType: NSStringFromClass(INSendMessageIntent.self))
         let response = INSendMessageIntentResponse(code: .success, userActivity: userActivity)
-        
         completion(response)
     }
     

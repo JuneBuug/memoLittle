@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E172FC41FB7015000258817 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E172FC31FB7015000258817 /* IntentHandler.swift */; };
-		0E172FC81FB7015000258817 /* IntentsHandler.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0E172FC11FB7015000258817 /* IntentsHandler.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0E238CDA1F90A16B008330D6 /* LittleLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E238CD91F90A16B008330D6 /* LittleLineViewController.swift */; };
 		0E238CE11F90A58D008330D6 /* LittleLineLikeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E238CDF1F90A58D008330D6 /* LittleLineLikeTableViewCell.swift */; };
 		0E238CE21F90A58D008330D6 /* LittleLineLikeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E238CE01F90A58D008330D6 /* LittleLineLikeTableViewCell.xib */; };
@@ -29,16 +27,6 @@
 		9C441D585612D25709498673 /* Pods_memoLittle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F69D3DD7068D77B9D765E5AD /* Pods_memoLittle.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		0E172FC61FB7015000258817 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0E3095191F8FB09B00A2F7D3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0E172FC01FB7015000258817;
-			remoteInfo = IntentsHandler;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		0E172FCC1FB7015000258817 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -46,7 +34,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				0E172FC81FB7015000258817 /* IntentsHandler.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,7 +42,6 @@
 
 /* Begin PBXFileReference section */
 		0E10723D1FAAE3CB002674D4 /* memoLittle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = memoLittle.entitlements; sourceTree = "<group>"; };
-		0E172FC11FB7015000258817 /* IntentsHandler.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IntentsHandler.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E172FC31FB7015000258817 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		0E172FC51FB7015000258817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E238CD91F90A16B008330D6 /* LittleLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleLineViewController.swift; sourceTree = "<group>"; };
@@ -83,13 +69,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0E172FBE1FB7015000258817 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0E30951E1F8FB09B00A2F7D3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -177,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				0E3095211F8FB09B00A2F7D3 /* memoLittle.app */,
-				0E172FC11FB7015000258817 /* IntentsHandler.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,23 +194,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0E172FC01FB7015000258817 /* IntentsHandler */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0E172FCB1FB7015000258817 /* Build configuration list for PBXNativeTarget "IntentsHandler" */;
-			buildPhases = (
-				0E172FBD1FB7015000258817 /* Sources */,
-				0E172FBE1FB7015000258817 /* Frameworks */,
-				0E172FBF1FB7015000258817 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = IntentsHandler;
-			productName = IntentsHandler;
-			productReference = 0E172FC11FB7015000258817 /* IntentsHandler.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		0E3095201F8FB09B00A2F7D3 /* memoLittle */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E3095331F8FB09B00A2F7D3 /* Build configuration list for PBXNativeTarget "memoLittle" */;
@@ -248,7 +209,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				0E172FC71FB7015000258817 /* PBXTargetDependency */,
 			);
 			name = memoLittle;
 			productName = memoLittle;
@@ -265,10 +225,6 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = junebuug;
 				TargetAttributes = {
-					0E172FC01FB7015000258817 = {
-						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
-					};
 					0E3095201F8FB09B00A2F7D3 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -297,19 +253,11 @@
 			projectRoot = "";
 			targets = (
 				0E3095201F8FB09B00A2F7D3 /* memoLittle */,
-				0E172FC01FB7015000258817 /* IntentsHandler */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0E172FBF1FB7015000258817 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0E30951F1F8FB09B00A2F7D3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -382,14 +330,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0E172FBD1FB7015000258817 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0E172FC41FB7015000258817 /* IntentHandler.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0E30951D1F8FB09B00A2F7D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,14 +349,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0E172FC71FB7015000258817 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0E172FC01FB7015000258817 /* IntentsHandler */;
-			targetProxy = 0E172FC61FB7015000258817 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0E3095281F8FB09B00A2F7D3 /* Main.storyboard */ = {
@@ -438,38 +370,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		0E172FC91FB7015000258817 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FX8Z34KJ9H;
-				INFOPLIST_FILE = IntentsHandler/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.junebuug.memoLittle.IntentsHandler;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		0E172FCA1FB7015000258817 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FX8Z34KJ9H;
-				INFOPLIST_FILE = IntentsHandler/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.junebuug.memoLittle.IntentsHandler;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		0E3095311F8FB09B00A2F7D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -622,15 +522,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0E172FCB1FB7015000258817 /* Build configuration list for PBXNativeTarget "IntentsHandler" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0E172FC91FB7015000258817 /* Debug */,
-				0E172FCA1FB7015000258817 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		0E30951C1F8FB09B00A2F7D3 /* Build configuration list for PBXProject "memoLittle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
