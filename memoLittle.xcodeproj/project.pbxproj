@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E1AF1681FD6E589009F3C6A /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AF1671FD6E589009F3C6A /* IntentHandler.swift */; };
+		0E1AF16C1FD6E589009F3C6A /* SaveMemoExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0E1AF1651FD6E589009F3C6A /* SaveMemoExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0E238CDA1F90A16B008330D6 /* LittleLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E238CD91F90A16B008330D6 /* LittleLineViewController.swift */; };
 		0E238CE11F90A58D008330D6 /* LittleLineLikeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E238CDF1F90A58D008330D6 /* LittleLineLikeTableViewCell.swift */; };
 		0E238CE21F90A58D008330D6 /* LittleLineLikeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E238CE01F90A58D008330D6 /* LittleLineLikeTableViewCell.xib */; };
@@ -24,8 +26,29 @@
 		0E6106D71F97691800E87765 /* AddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6106D61F97691800E87765 /* AddPersonViewController.swift */; };
 		0EA1313D1FA1B9BB00028291 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA1313C1FA1B9BB00028291 /* SettingsViewController.swift */; };
 		0EC5AED41F9216EE00DE221B /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5AED31F9216EE00DE221B /* MemoViewController.swift */; };
+		0ECBFD551FD74F7500B333D1 /* memoCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ECBFD531FD74F7500B333D1 /* memoCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0ECBFD581FD74F7500B333D1 /* memoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECBFD511FD74F7500B333D1 /* memoCore.framework */; };
+		0ECBFD591FD74F7500B333D1 /* memoCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECBFD511FD74F7500B333D1 /* memoCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0ECBFD5F1FD74F8600B333D1 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECBFD5E1FD74F8600B333D1 /* Memo.swift */; };
 		9C441D585612D25709498673 /* Pods_memoLittle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F69D3DD7068D77B9D765E5AD /* Pods_memoLittle.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0E1AF16A1FD6E589009F3C6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E3095191F8FB09B00A2F7D3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E1AF1641FD6E589009F3C6A;
+			remoteInfo = SaveMemoExtension;
+		};
+		0ECBFD561FD74F7500B333D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E3095191F8FB09B00A2F7D3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0ECBFD501FD74F7500B333D1;
+			remoteInfo = memoCore;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		0E172FCC1FB7015000258817 /* Embed App Extensions */ = {
@@ -34,16 +57,29 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				0E1AF16C1FD6E589009F3C6A /* SaveMemoExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ECBFD5D1FD74F7500B333D1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0ECBFD591FD74F7500B333D1 /* memoCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0E10723D1FAAE3CB002674D4 /* memoLittle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = memoLittle.entitlements; sourceTree = "<group>"; };
-		0E172FC31FB7015000258817 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
-		0E172FC51FB7015000258817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E1AF1651FD6E589009F3C6A /* SaveMemoExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SaveMemoExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E1AF1671FD6E589009F3C6A /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		0E1AF1691FD6E589009F3C6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E238CD91F90A16B008330D6 /* LittleLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleLineViewController.swift; sourceTree = "<group>"; };
 		0E238CDF1F90A58D008330D6 /* LittleLineLikeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleLineLikeTableViewCell.swift; sourceTree = "<group>"; };
 		0E238CE01F90A58D008330D6 /* LittleLineLikeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LittleLineLikeTableViewCell.xib; sourceTree = "<group>"; };
@@ -63,30 +99,49 @@
 		0E6106D61F97691800E87765 /* AddPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonViewController.swift; sourceTree = "<group>"; };
 		0EA1313C1FA1B9BB00028291 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0EC5AED31F9216EE00DE221B /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
+		0ECBFD511FD74F7500B333D1 /* memoCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = memoCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ECBFD531FD74F7500B333D1 /* memoCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = memoCore.h; sourceTree = "<group>"; };
+		0ECBFD541FD74F7500B333D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0ECBFD5E1FD74F8600B333D1 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		883B577E3613F91F481977A2 /* Pods-memoLittle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memoLittle.release.xcconfig"; path = "Pods/Target Support Files/Pods-memoLittle/Pods-memoLittle.release.xcconfig"; sourceTree = "<group>"; };
 		AF47D39B400D2F65BC775A88 /* Pods-memoLittle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memoLittle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-memoLittle/Pods-memoLittle.debug.xcconfig"; sourceTree = "<group>"; };
 		F69D3DD7068D77B9D765E5AD /* Pods_memoLittle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_memoLittle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0E1AF1621FD6E589009F3C6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0E30951E1F8FB09B00A2F7D3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9C441D585612D25709498673 /* Pods_memoLittle.framework in Frameworks */,
+				0ECBFD581FD74F7500B333D1 /* memoCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ECBFD4D1FD74F7500B333D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0E172FC21FB7015000258817 /* IntentsHandler */ = {
+		0E1AF1661FD6E589009F3C6A /* SaveMemoExtension */ = {
 			isa = PBXGroup;
 			children = (
-				0E172FC31FB7015000258817 /* IntentHandler.swift */,
-				0E172FC51FB7015000258817 /* Info.plist */,
+				0E1AF1671FD6E589009F3C6A /* IntentHandler.swift */,
+				0E1AF1691FD6E589009F3C6A /* Info.plist */,
 			);
-			path = IntentsHandler;
+			path = SaveMemoExtension;
 			sourceTree = "<group>";
 		};
 		0E238CD31F90A11E008330D6 /* ViewController */ = {
@@ -145,7 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				0E3095231F8FB09B00A2F7D3 /* memoLittle */,
-				0E172FC21FB7015000258817 /* IntentsHandler */,
+				0E1AF1661FD6E589009F3C6A /* SaveMemoExtension */,
+				0ECBFD521FD74F7500B333D1 /* memoCore */,
 				0E3095221F8FB09B00A2F7D3 /* Products */,
 				E33C6017724504E05C3E7ACB /* Pods */,
 				BE782AC5D294DD2380D5368A /* Frameworks */,
@@ -156,6 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				0E3095211F8FB09B00A2F7D3 /* memoLittle.app */,
+				0E1AF1651FD6E589009F3C6A /* SaveMemoExtension.appex */,
+				0ECBFD511FD74F7500B333D1 /* memoCore.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,6 +230,16 @@
 				0E238CD31F90A11E008330D6 /* ViewController */,
 			);
 			path = memoLittle;
+			sourceTree = "<group>";
+		};
+		0ECBFD521FD74F7500B333D1 /* memoCore */ = {
+			isa = PBXGroup;
+			children = (
+				0ECBFD531FD74F7500B333D1 /* memoCore.h */,
+				0ECBFD541FD74F7500B333D1 /* Info.plist */,
+				0ECBFD5E1FD74F8600B333D1 /* Memo.swift */,
+			);
+			path = memoCore;
 			sourceTree = "<group>";
 		};
 		BE782AC5D294DD2380D5368A /* Frameworks */ = {
@@ -193,7 +261,35 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		0ECBFD4E1FD74F7500B333D1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ECBFD551FD74F7500B333D1 /* memoCore.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		0E1AF1641FD6E589009F3C6A /* SaveMemoExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E1AF16D1FD6E589009F3C6A /* Build configuration list for PBXNativeTarget "SaveMemoExtension" */;
+			buildPhases = (
+				0E1AF1611FD6E589009F3C6A /* Sources */,
+				0E1AF1621FD6E589009F3C6A /* Frameworks */,
+				0E1AF1631FD6E589009F3C6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SaveMemoExtension;
+			productName = SaveMemoExtension;
+			productReference = 0E1AF1651FD6E589009F3C6A /* SaveMemoExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		0E3095201F8FB09B00A2F7D3 /* memoLittle */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E3095331F8FB09B00A2F7D3 /* Build configuration list for PBXNativeTarget "memoLittle" */;
@@ -205,15 +301,36 @@
 				2E2AECDDCB9A067B6632C63A /* [CP] Embed Pods Frameworks */,
 				80518219B6BBFB49BCC437A7 /* [CP] Copy Pods Resources */,
 				0E172FCC1FB7015000258817 /* Embed App Extensions */,
+				0ECBFD5D1FD74F7500B333D1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0E1AF16B1FD6E589009F3C6A /* PBXTargetDependency */,
+				0ECBFD571FD74F7500B333D1 /* PBXTargetDependency */,
 			);
 			name = memoLittle;
 			productName = memoLittle;
 			productReference = 0E3095211F8FB09B00A2F7D3 /* memoLittle.app */;
 			productType = "com.apple.product-type.application";
+		};
+		0ECBFD501FD74F7500B333D1 /* memoCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0ECBFD5C1FD74F7500B333D1 /* Build configuration list for PBXNativeTarget "memoCore" */;
+			buildPhases = (
+				0ECBFD4C1FD74F7500B333D1 /* Sources */,
+				0ECBFD4D1FD74F7500B333D1 /* Frameworks */,
+				0ECBFD4E1FD74F7500B333D1 /* Headers */,
+				0ECBFD4F1FD74F7500B333D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = memoCore;
+			productName = memoCore;
+			productReference = 0ECBFD511FD74F7500B333D1 /* memoCore.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -225,6 +342,10 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = junebuug;
 				TargetAttributes = {
+					0E1AF1641FD6E589009F3C6A = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
 					0E3095201F8FB09B00A2F7D3 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -236,6 +357,11 @@
 								enabled = 0;
 							};
 						};
+					};
+					0ECBFD501FD74F7500B333D1 = {
+						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -253,11 +379,20 @@
 			projectRoot = "";
 			targets = (
 				0E3095201F8FB09B00A2F7D3 /* memoLittle */,
+				0E1AF1641FD6E589009F3C6A /* SaveMemoExtension */,
+				0ECBFD501FD74F7500B333D1 /* memoCore */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0E1AF1631FD6E589009F3C6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0E30951F1F8FB09B00A2F7D3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -268,6 +403,13 @@
 				0E238CE21F90A58D008330D6 /* LittleLineLikeTableViewCell.xib in Resources */,
 				0E48F5161FB8074500CB6577 /* PeopleDetailHeader.xib in Resources */,
 				0E30952A1F8FB09B00A2F7D3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ECBFD4F1FD74F7500B333D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +472,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0E1AF1611FD6E589009F3C6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E1AF1681FD6E589009F3C6A /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0E30951D1F8FB09B00A2F7D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -348,7 +498,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0ECBFD4C1FD74F7500B333D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ECBFD5F1FD74F8600B333D1 /* Memo.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0E1AF16B1FD6E589009F3C6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E1AF1641FD6E589009F3C6A /* SaveMemoExtension */;
+			targetProxy = 0E1AF16A1FD6E589009F3C6A /* PBXContainerItemProxy */;
+		};
+		0ECBFD571FD74F7500B333D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0ECBFD501FD74F7500B333D1 /* memoCore */;
+			targetProxy = 0ECBFD561FD74F7500B333D1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0E3095281F8FB09B00A2F7D3 /* Main.storyboard */ = {
@@ -370,6 +541,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0E1AF16E1FD6E589009F3C6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FX8Z34KJ9H;
+				INFOPLIST_FILE = SaveMemoExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.junebuug.memoLittle.SaveMemoExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0E1AF16F1FD6E589009F3C6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FX8Z34KJ9H;
+				INFOPLIST_FILE = SaveMemoExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.junebuug.memoLittle.SaveMemoExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		0E3095311F8FB09B00A2F7D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -519,9 +722,71 @@
 			};
 			name = Release;
 		};
+		0ECBFD5A1FD74F7500B333D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = FX8Z34KJ9H;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = memoCore/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.junebuug.memoCore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0ECBFD5B1FD74F7500B333D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = FX8Z34KJ9H;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = memoCore/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.junebuug.memoCore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0E1AF16D1FD6E589009F3C6A /* Build configuration list for PBXNativeTarget "SaveMemoExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E1AF16E1FD6E589009F3C6A /* Debug */,
+				0E1AF16F1FD6E589009F3C6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0E30951C1F8FB09B00A2F7D3 /* Build configuration list for PBXProject "memoLittle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -536,6 +801,15 @@
 			buildConfigurations = (
 				0E3095341F8FB09B00A2F7D3 /* Debug */,
 				0E3095351F8FB09B00A2F7D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0ECBFD5C1FD74F7500B333D1 /* Build configuration list for PBXNativeTarget "memoCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ECBFD5A1FD74F7500B333D1 /* Debug */,
+				0ECBFD5B1FD74F7500B333D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
