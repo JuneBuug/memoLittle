@@ -14,8 +14,10 @@ class MemoViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var list : Results<Person>!
+    var filtered_list : Results<Person>!
     var notificationToken: NotificationToken!
     var realm: Realm!
+    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,14 @@ class MemoViewController: UIViewController {
         notificationToken = list.addNotificationBlock({ (change) in
             self.tableView.reloadData()
         })
+        
+        searchController.searchResultsUpdater = self as! UISearchResultsUpdating
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+        searchController.searchBar.placeholder = "이름 혹은 관계로 검색해보세요."
+        searchController.searchBar.setValue("취소", forKey:"_cancelButtonText")
+
         // Do any additional setup after loading the view.
     }
 
@@ -45,34 +55,49 @@ class MemoViewController: UIViewController {
     // 사람 추가 view로 이동
     @IBAction func onTouchAddBtn(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "AddPersonViewController") as! AddPersonViewController
-//        self.present(vc, animated: true, completion: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "WriteViewController") as! WriteViewController
         self.present(vc, animated: true, completion: nil)
     }
+   
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func isFiltering() -> Bool {
+        return searchController.isActive
     }
-    */
+    
+    func searchBarIsEmpty() -> Bool {
+        // Returns true if the text is empty or nil
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        
+        filtered_list = realm.objects(Person.self).filter("name CONTAINS[c]%@ OR relationship CONTAINS[c]%@",searchText,searchText)
+        
+        tableView.reloadData()
+    }
 
 }
 
 extension MemoViewController : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        if isFiltering() {
+            return filtered_list.count
+        }else{
+            return list.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.accessoryType = .none
-        cell.textLabel?.text = list[indexPath.row].name + " | " + list[indexPath.row].relationship
+        
+        if isFiltering(){
+            cell.textLabel?.text = filtered_list[indexPath.row].name + " | " + filtered_list[indexPath.row].relationship
+        }else{
+            cell.textLabel?.text = list[indexPath.row].name + " | " + list[indexPath.row].relationship
+        }
+        
         return cell
     }
     
@@ -80,35 +105,77 @@ extension MemoViewController : UITableViewDelegate,UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: false)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "PersonDetailViewController") as! PersonDetailViewController
-        vc.person = list[indexPath.row]
+        if isFiltering(){
+            vc.person = list[indexPath.row]
+        }else{
+            vc.person = filtered_list[indexPath.row]
+        }
         self.present(vc, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        // realm delete
-        let deleteAction = UITableViewRowAction(style: .destructive, title: "삭제") { (deleteAction, indexPath) in
-            do {
-                try self.realm.write {
-                    var events = self.realm.objects(LittleLine.self).filter("writer = %@",self.list[indexPath.row])
-                    for event in events {
-                        self.realm.delete(event)
+        
+        if isFiltering(){
+            // realm delete
+            let deleteAction = UITableViewRowAction(style: .destructive, title: "삭제") { (deleteAction, indexPath) in
+                do {
+                    try self.realm.write {
+                        var events = self.realm.objects(LittleLine.self).filter("writer = %@",self.filtered_list[indexPath.row])
+                        for event in events {
+                            self.realm.delete(event)
+                        }
+                        self.realm.delete(self.filtered_list[indexPath.row])
+                        
                     }
-                    self.realm.delete(self.list[indexPath.row])
-                    
+                } catch {
+                    print("\(error)")
                 }
-            } catch {
-                print("\(error)")
             }
+            
+            let editAction = UITableViewRowAction(style: .normal, title: "편집") { (editAction, indexPath) in
+                // 사람 기본정보 수정 가능
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "AddPersonViewController") as! AddPersonViewController
+                vc.person = self.filtered_list[indexPath.row]
+                self.present(vc, animated: true, completion: nil)
+            }
+             return [deleteAction, editAction]
+        }else{
+            // realm delete
+            let deleteAction = UITableViewRowAction(style: .destructive, title: "삭제") { (deleteAction, indexPath) in
+                do {
+                    try self.realm.write {
+                        var events = self.realm.objects(LittleLine.self).filter("writer = %@",self.list[indexPath.row])
+                        for event in events {
+                            self.realm.delete(event)
+                        }
+                        self.realm.delete(self.list[indexPath.row])
+                        
+                    }
+                } catch {
+                    print("\(error)")
+                }
+            }
+            
+            let editAction = UITableViewRowAction(style: .normal, title: "편집") { (editAction, indexPath) in
+                // 사람 기본정보 수정 가능
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "AddPersonViewController") as! AddPersonViewController
+                vc.person = self.list[indexPath.row]
+                self.present(vc, animated: true, completion: nil)
+            }
+             return [deleteAction, editAction]
         }
         
-        let editAction = UITableViewRowAction(style: .normal, title: "편집") { (editAction, indexPath) in
-            // 사람 기본정보 수정 가능
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "AddPersonViewController") as! AddPersonViewController
-            vc.person = self.list[indexPath.row]
-            self.present(vc, animated: true, completion: nil)
-        }
-        return [deleteAction, editAction]
+       
     }
     
 }
+
+
+extension MemoViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+}
+
