@@ -17,6 +17,7 @@ final class LittleLine : Object {
     @objc dynamic var personName = "" // 검색을 위한 사람 이름
     @objc dynamic var objectName = "" // 대상 이름 / 이벤트 이름
     @objc dynamic var id = UUID().uuidString // 해당 내용의 id
+    @objc dynamic var createdDate : Date = Date()
     var tags = List<RealmString>()
     
     

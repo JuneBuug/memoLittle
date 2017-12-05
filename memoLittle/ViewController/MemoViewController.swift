@@ -106,9 +106,9 @@ extension MemoViewController : UITableViewDelegate,UITableViewDataSource {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "PersonDetailViewController") as! PersonDetailViewController
         if isFiltering(){
-            vc.person = list[indexPath.row]
-        }else{
             vc.person = filtered_list[indexPath.row]
+        }else{
+            vc.person = list[indexPath.row]
         }
         self.present(vc, animated: true, completion: nil)
     }

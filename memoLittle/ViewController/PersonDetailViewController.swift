@@ -74,7 +74,7 @@ class PersonDetailViewController: UIViewController {
     
     func filterList(){
         if list != nil {
-            list = realm.objects(LittleLine.self).filter("writer == %@",person)
+            list = realm.objects(LittleLine.self).filter("writer == %@",person).sorted(byKeyPath: "createdDate", ascending: false)
             tableView.reloadData()
         }
     }
