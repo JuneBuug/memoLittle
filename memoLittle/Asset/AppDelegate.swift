@@ -24,25 +24,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 
         let memo = Memo.load()
-        var writer = Person()
-        let foundList = list.filter("name == [c]%@",memo.writer)
-        if let person = foundList.first  {
-            writer = person
-        }else{
-            writer.name = memo.writer
+        if memo.contents != "" {
+            var writer = Person()
+            let foundList = list.filter("name == [c]%@",memo.writer)
+            if let person = foundList.first  {
+                writer = person
+            }else{
+                writer.name = memo.writer
+            }
+            
+            let obj = LittleLine()
+            obj.objectName = memo.contents
+            obj.personName = memo.writer
+            obj.writer = writer
+            obj.category = 0
+            
+            try! realm.write{
+                realm.add(writer)
+                realm.add(obj)
+            }
         }
-        
-        let obj = LittleLine()
-        obj.objectName = memo.contents
-        obj.personName = memo.writer
-        obj.writer = writer
-        obj.category = 0
-        
-        try! realm.write{
-            realm.add(writer)
-            realm.add(obj)
-        }
-        
+      
        
         UISearchBar.appearance().barTintColor = UIColor(red: 241.0/255.0,green: 241.0/255.0 ,blue: 239.0/255.0, alpha: 1.0)
         UISearchBar.appearance().tintColor =  UIColor(red: 71.0/255.0,green: 71.0/255.0 ,blue: 71.0/255.0, alpha: 1.0)

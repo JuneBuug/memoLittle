@@ -45,22 +45,21 @@ public struct Memo: Codable {
 
     public static func load() -> Memo {
         if let contents = Memo.userDefaults().string(forKey: Memo.contentsKey){
+            Memo.userDefaults().removeObject(forKey: Memo.contentsKey)
             if let writer = Memo.userDefaults().string(forKey: Memo.writerKey){
+                Memo.userDefaults().removeObject(forKey: Memo.writerKey)
                 return Memo(contents: contents,writer: writer)
             }else{
                 return Memo(contents: contents,writer : "작성자 없는 메모")
             }
         }else{
-            return Memo(contents:"시리가 실행되긴 했는뎅",writer:"내용없는메모")
+            return Memo(contents:"",writer:"내용없는메모")
         }
     }
     
     public func save(){
-        print("잘넘어왔나?"+contents)
-        print(writer)
         Memo.userDefaults().set(contents, forKey: Memo.contentsKey)
         Memo.userDefaults().set(writer, forKey: Memo.writerKey)
         let sth =  UserDefaults.standard.string(forKey: Memo.contentsKey)
-        print("저장된거"+sth!)
     }
 }
