@@ -19,7 +19,7 @@ final class LittleLine : Object {
     @objc dynamic var id = UUID().uuidString // 해당 내용의 id
     @objc dynamic var createdDate : Date = Date()
     var tags = List<RealmString>()
-    
+
     
     override static func primaryKey() -> String? {
         return "id"
@@ -32,7 +32,7 @@ final class Person : Object {
     @objc dynamic var name = "" // 사람 이름
     @objc dynamic var relationship = "" // 이 사람과의 관계
     @objc dynamic var id = UUID().uuidString // 사람 id
-    
+    var profile = Photo()
     override static func primaryKey() -> String? {
         return "id"
     }
@@ -40,4 +40,10 @@ final class Person : Object {
 
 final class RealmString : Object {
     @objc dynamic var stringValue = ""
+}
+
+// 사진
+final class Photo : Object {
+    @objc dynamic var createDate: Date = Date()
+    @objc dynamic var image: Data = Data()
 }

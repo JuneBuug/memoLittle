@@ -52,5 +52,7 @@
 	</dict>
 	<key>NSSiriUsageDescription</key>
 	<string>시리를 사용합니다.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>프로필 등록을 위해 사진앨범에 접근합니다.</string>
 </dict>
 </plist>
