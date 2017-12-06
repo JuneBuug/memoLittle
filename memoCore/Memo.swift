@@ -37,7 +37,7 @@ public struct Memo: Codable {
     }
     
     private static func userDefaults() -> UserDefaults {
-        guard let defaults = UserDefaults(suiteName: "com.junebuug.memoCore") else {
+        guard let defaults = UserDefaults(suiteName: "group.memoLittle.Extension") else {
             fatalError("failed to create UserDefaults suite")
         }
         return defaults
@@ -46,13 +46,13 @@ public struct Memo: Codable {
     public static func load() -> Memo {
         if let contents = Memo.userDefaults().string(forKey: Memo.contentsKey){
             if let writer = Memo.userDefaults().string(forKey: Memo.writerKey){
-                print("여기까지 들어는 갔어")
                 return Memo(contents: contents,writer: writer)
+            }else{
+                return Memo(contents: contents,writer : "작성자 없는 메모")
             }
-            print("writer를 인식 못한 경우")
+        }else{
+            return Memo(contents:"시리가 실행되긴 했는뎅",writer:"내용없는메모")
         }
-        print("그냥 로드를 못한 경우")
-        return Memo(contents:"",writer:"내용없는메모")
     }
     
     public func save(){
@@ -60,5 +60,7 @@ public struct Memo: Codable {
         print(writer)
         Memo.userDefaults().set(contents, forKey: Memo.contentsKey)
         Memo.userDefaults().set(writer, forKey: Memo.writerKey)
+        let sth =  UserDefaults.standard.string(forKey: Memo.contentsKey)
+        print("저장된거"+sth!)
     }
 }

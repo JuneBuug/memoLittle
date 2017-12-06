@@ -103,6 +103,7 @@
 		0ECBFD531FD74F7500B333D1 /* memoCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = memoCore.h; sourceTree = "<group>"; };
 		0ECBFD541FD74F7500B333D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ECBFD5E1FD74F8600B333D1 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
+		0EDC66711FD7B7B3004B4EC0 /* SaveMemoExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SaveMemoExtension.entitlements; sourceTree = "<group>"; };
 		883B577E3613F91F481977A2 /* Pods-memoLittle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memoLittle.release.xcconfig"; path = "Pods/Target Support Files/Pods-memoLittle/Pods-memoLittle.release.xcconfig"; sourceTree = "<group>"; };
 		AF47D39B400D2F65BC775A88 /* Pods-memoLittle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memoLittle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-memoLittle/Pods-memoLittle.debug.xcconfig"; sourceTree = "<group>"; };
 		F69D3DD7068D77B9D765E5AD /* Pods_memoLittle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_memoLittle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +139,7 @@
 		0E1AF1661FD6E589009F3C6A /* SaveMemoExtension */ = {
 			isa = PBXGroup;
 			children = (
+				0EDC66711FD7B7B3004B4EC0 /* SaveMemoExtension.entitlements */,
 				0E1AF1671FD6E589009F3C6A /* IntentHandler.swift */,
 				0E1AF1691FD6E589009F3C6A /* Info.plist */,
 			);
@@ -345,11 +347,19 @@
 					0E1AF1641FD6E589009F3C6A = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					0E3095201F8FB09B00A2F7D3 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.Siri = {
 								enabled = 1;
 							};
@@ -544,6 +554,7 @@
 		0E1AF16E1FD6E589009F3C6A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SaveMemoExtension/SaveMemoExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FX8Z34KJ9H;
 				INFOPLIST_FILE = SaveMemoExtension/Info.plist;
@@ -560,6 +571,7 @@
 		0E1AF16F1FD6E589009F3C6A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SaveMemoExtension/SaveMemoExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FX8Z34KJ9H;
 				INFOPLIST_FILE = SaveMemoExtension/Info.plist;
