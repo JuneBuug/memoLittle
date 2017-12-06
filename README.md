@@ -4,6 +4,8 @@
 
 [1112 태그 기능 데모영상 링크](https://drive.google.com/open?id=12cZWhCXq6-GzFKe5FN8DXJpVwB5TLOmg)
 
+[1206 SiriKit 기능 데모영상 링크](https://drive.google.com/open?id=15McvtGgPleYnkcqu0Wv6FUzGsH-cyPPd)
+
 ```
 사람에 대한 소소한 사실을 기록하는 메모 앱인데 이름은 메모리틀
 
@@ -41,8 +43,6 @@
 아니면 어떤 사람은 뭘 좋아해요! 오늘은 이걸 해보는 게 어떨까요? 하고 띄움
 
 타임라인에 띄울 사람 설정할 수 있음
-
-‘타임라인 읽어줘’ 하면 읽을 수 있음
 
 
 # 글쓰기
@@ -85,3 +85,6 @@
 타임라인을 제거하고 사람별로 분류한 화면과 메모 작성 화면으로 나누기로함.
 탭바를 없애는 게 더 나을지도.
 <img src="screenshots/screenshot3.png" alt="사람정보디테일화면" width= "40%" />
+
+
+<img src="screenshots/screenshot4.png" alt="해시태그화면" width= "40%" />
