@@ -53,6 +53,7 @@
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oval" translatesAutoresizingMaskIntoConstraints="NO" id="IOH-w5-hF1">
                         <rect key="frame" x="16" y="79" width="9" height="9"/>
+                        <color key="tintColor" red="0.0" green="0.68643361329999997" blue="0.49380367990000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="9" id="HaU-ba-sFp"/>
                             <constraint firstAttribute="height" constant="9" id="dXj-wJ-02m"/>
@@ -88,8 +89,10 @@
             <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
             <connections>
                 <outlet property="likeObject" destination="Io5-OX-qSK" id="BjA-G2-tpp"/>
+                <outlet property="nameSubLabel" destination="sfM-hc-BNT" id="kRp-B5-5RM"/>
                 <outlet property="personName" destination="cZ6-6W-JEo" id="8ad-48-DiO"/>
                 <outlet property="tags" destination="5f3-ph-nxb" id="cTH-5j-sY8"/>
+                <outlet property="timeline" destination="WSc-TD-8zd" id="L6i-df-e6L"/>
             </connections>
             <point key="canvasLocation" x="34" y="115"/>
         </tableViewCell>

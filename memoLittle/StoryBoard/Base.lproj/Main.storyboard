@@ -42,27 +42,27 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="lV2-Mv-hJp">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="lV2-Mv-hJp">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lV2-Mv-hJp" id="8MR-lX-U5e">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="d21-Lt-2Ed">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="d21-Lt-2Ed">
                                         <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d21-Lt-2Ed" id="KzU-wc-bMB">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Jch-db-6La">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Jch-db-6La">
                                         <rect key="frame" x="0.0" y="116" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jch-db-6La" id="mm7-7I-BeS">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -85,7 +85,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="적기 Memo" image="ic_add" id="6Qc-kP-ELI"/>
                     <connections>
+                        <outlet property="navBar" destination="JvS-vV-abk" id="pLf-Kb-aND"/>
                         <outlet property="tableView" destination="gQ3-g2-wUh" id="drP-kI-eqf"/>
+                        <outlet property="titleItem" destination="gVx-Tk-UVb" id="NjR-pz-4GP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DFa-uO-0EH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -125,7 +127,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1fn-Je-70Y" id="U2V-U9-lIT">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -133,7 +135,7 @@
                                         <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fhu-6a-sby" id="mnn-BA-SaL">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -141,7 +143,7 @@
                                         <rect key="frame" x="0.0" y="116" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HW0-Rg-wVv" id="eao-0J-135">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -163,8 +165,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="리틀라인 Littleline" image="ic_timeline" id="mKU-BB-mzn"/>
                     <connections>
+                        <outlet property="navBar" destination="zG5-29-aYs" id="0a0-fM-4cV"/>
                         <outlet property="searchDisplayController" destination="f4X-Ky-rCo" id="FkA-r7-FNW"/>
                         <outlet property="tableView" destination="3kA-8E-eGA" id="8uD-Nn-rJy"/>
+                        <outlet property="titleItem" destination="QiD-Sg-6EV" id="Zvy-cp-BMX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tI7-SL-Qw9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -240,6 +244,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="설정 Settings" image="ic_more" id="egA-d4-Bnc"/>
                     <connections>
+                        <outlet property="navBar" destination="ogX-hf-opD" id="JCx-h3-cBI"/>
                         <outlet property="tableView" destination="4Fw-ph-mJ7" id="nIH-vy-P8T"/>
                     </connections>
                 </viewController>
@@ -359,8 +364,13 @@
                         <viewLayoutGuide key="safeArea" id="gQH-MH-MbN"/>
                     </view>
                     <connections>
+                        <outlet property="closeBtn" destination="kOX-dU-64M" id="22H-lb-tNh"/>
+                        <outlet property="mainView" destination="0bC-zB-J1f" id="rja-qr-asG"/>
+                        <outlet property="nickNameLabel" destination="z6f-Cu-bSA" id="nDz-L5-upi"/>
                         <outlet property="profilePicture" destination="tLz-Qp-WRM" id="eYS-kX-mAS"/>
                         <outlet property="relationship" destination="D3b-hq-Dl1" id="gCA-lL-91H"/>
+                        <outlet property="relationshipNameLabel" destination="wli-FU-EUe" id="TOX-Dy-o7t"/>
+                        <outlet property="saveBtn" destination="mGe-IG-5dU" id="16k-kT-GlT"/>
                         <outlet property="textView" destination="hxS-dC-gC0" id="MYs-FR-13B"/>
                     </connections>
                 </viewController>
@@ -419,6 +429,7 @@
                         <viewLayoutGuide key="safeArea" id="7hR-tb-jbP"/>
                     </view>
                     <connections>
+                        <outlet property="mainView" destination="3U7-ua-cxE" id="X0x-Pt-wg6"/>
                         <outlet property="textView" destination="Czz-pg-uJd" id="HnH-dp-TIy"/>
                     </connections>
                 </viewController>
@@ -449,11 +460,11 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="DeJ-Ff-xye">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="DeJ-Ff-xye">
                                         <rect key="frame" x="0.0" y="164" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DeJ-Ff-xye" id="eHx-jI-ud7">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -472,6 +483,7 @@
                         <viewLayoutGuide key="safeArea" id="555-oZ-Tbb"/>
                     </view>
                     <connections>
+                        <outlet property="closeBtn" destination="ecC-ww-yyw" id="R29-AK-NqJ"/>
                         <outlet property="tableView" destination="RnV-R0-XOU" id="qMY-tu-JwM"/>
                     </connections>
                 </viewController>

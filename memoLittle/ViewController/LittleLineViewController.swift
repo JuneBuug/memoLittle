@@ -12,6 +12,8 @@ import RealmSwift
 
 class LittleLineViewController: UIViewController {
 
+    @IBOutlet weak var titleItem: UINavigationItem!
+    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var tableView: UITableView!
     
     var list : Results<LittleLine>!
@@ -44,6 +46,7 @@ class LittleLineViewController: UIViewController {
         })
         tableView.dataSource = self
         tableView.delegate = self
+        setupUI()
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
@@ -55,6 +58,19 @@ class LittleLineViewController: UIViewController {
         tableView.register(UINib(nibName: "LittleLineEventTableViewCell", bundle: nil), forCellReuseIdentifier: "LittleLineEventTableViewCell")
         // Do any additional setup after loading the view.
         
+    }
+    
+    func setupUI(){
+        Style.themeNight()
+        self.view.backgroundColor = Style.backgroundColor
+        self.tableView.backgroundColor = Style.backgroundColor
+        navBar.barTintColor = Style.backgroundColor
+        navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Style.textColor]
+        titleItem.rightBarButtonItem?.tintColor = Style.tintColor
+        searchController.view.backgroundColor = Style.backgroundColor
+        searchController.searchBar.backgroundColor = Style.backgroundColor
+        searchController.searchBar.barTintColor = Style.backgroundColor
+        searchController.searchBar.tintColor = Style.textColor
     }
 
     func setupRealm() {

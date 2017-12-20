@@ -11,6 +11,7 @@ import RealmSwift
 
 class WriteViewController: UIViewController,UITextViewDelegate {
 
+    @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var textView: UITextView!
     let realm = try! Realm()
     var placeholderLabel : UILabel!
@@ -21,13 +22,14 @@ class WriteViewController: UIViewController,UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        setupUI()
         list = realm.objects(Person.self)
         
         let keyboardToolbar = UIToolbar()
         keyboardToolbar.sizeToFit()
         keyboardToolbar.isTranslucent = false
         keyboardToolbar.barTintColor = UIColor.white
+        keyboardToolbar.barTintColor = Style.backgroundColor
         
         // 작성완료 버튼
         let doneButton = UIBarButtonItem(
@@ -42,9 +44,8 @@ class WriteViewController: UIViewController,UITextViewDelegate {
             target: self,
             action: #selector(moreMemo)
         )
-        let hightlightColor = UIColor(red: 0.0/255.0, green: 175.0/255.0, blue: 126.0/255.0, alpha: 1.0)
-        doneButton.tintColor = hightlightColor
-        moreButton.tintColor = UIColor.black
+        doneButton.tintColor = Style.tintColor
+        moreButton.tintColor = Style.textColor
         
         keyboardToolbar.items = [doneButton,moreButton]
         
@@ -64,6 +65,16 @@ class WriteViewController: UIViewController,UITextViewDelegate {
         // Do any additional setup after loading the view.
     }
 
+    
+    func setupUI(){
+        Style.themeNight()
+        self.view.backgroundColor = Style.backgroundColor
+        mainView.backgroundColor = Style.backgroundColor
+        textView.backgroundColor = Style.backgroundColor
+        textView.textColor = Style.textColor
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -196,15 +207,16 @@ class WriteViewController: UIViewController,UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView){
         placeholderLabel.isHidden = !textView.text.isEmpty
         attributed = NSMutableAttributedString(string : textView.text)
+        setupUI()
         if checkandReturnMention(text: textView.text).0 {
             let searchString = checkandReturnMention(text: textView.text).1
             let baseString = textView.text!
             
             
-            let hightlightColor = UIColor(red: 0.0/255.0, green: 175.0/255.0, blue: 126.0/255.0, alpha: 1.0)
+            let hightlightColor = Style.tintColor
             do
             {
-                let regex = try! NSRegularExpression(pattern: searchString,options: .caseInsensitive)
+                let regex = try! NSRegularExpression(pattern: "@"+searchString,options: .caseInsensitive)
                 for match in regex.matches(in: baseString, options: NSRegularExpression.MatchingOptions(), range: NSRange(location: 0, length: baseString.characters.count)) as [NSTextCheckingResult] {
                     attributed.addAttribute(NSAttributedStringKey.font, value: UIFont.systemFont(ofSize: 14.0), range: match.range)
                     attributed.addAttribute(NSAttributedStringKey.foregroundColor, value: hightlightColor, range: match.range)
@@ -219,7 +231,7 @@ class WriteViewController: UIViewController,UITextViewDelegate {
             for searchString in checkandReturnHashtag(text: textView.text){
                 let baseString = textView.text!
                 
-                let hightlightColor = UIColor(red: 255.0/255.0, green: 197.0/255.0, blue: 6.0/255.0, alpha: 1.0)
+                let hightlightColor = Style.hashtagColor
                 do
                 {
                     let regex = try! NSRegularExpression(pattern: "#"+searchString,options: .caseInsensitive)

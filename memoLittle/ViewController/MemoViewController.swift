@@ -12,6 +12,8 @@ import RealmSwift
 class MemoViewController: UIViewController {
     //사람 목록 view
 
+    @IBOutlet weak var titleItem: UINavigationItem!
+    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var tableView: UITableView!
     var list : Results<Person>!
     var filtered_list : Results<Person>!
@@ -29,16 +31,31 @@ class MemoViewController: UIViewController {
             self.tableView.reloadData()
         })
         
+        setupUI()
         searchController.searchResultsUpdater = self as! UISearchResultsUpdating
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
+        
         searchController.searchBar.placeholder = "이름 혹은 관계로 검색해보세요."
         searchController.searchBar.setValue("취소", forKey:"_cancelButtonText")
-
+        
+        
         // Do any additional setup after loading the view.
     }
 
+    func setupUI(){
+        Style.themeNight()
+        self.view.backgroundColor = Style.backgroundColor
+        self.tableView.backgroundColor = Style.backgroundColor
+        navBar.barTintColor = Style.backgroundColor
+        navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Style.textColor]
+        titleItem.rightBarButtonItem?.tintColor = Style.tintColor
+        searchController.view.backgroundColor = Style.backgroundColor
+        searchController.searchBar.backgroundColor = Style.backgroundColor
+        searchController.searchBar.barTintColor = Style.backgroundColor
+        searchController.searchBar.tintColor = Style.textColor
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -91,7 +108,8 @@ extension MemoViewController : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.accessoryType = .none
-        
+        cell.textLabel?.textColor = Style.textColor
+        cell.contentView.backgroundColor = Style.backgroundColor
         if isFiltering(){
             cell.textLabel?.text = filtered_list[indexPath.row].name + " | " + filtered_list[indexPath.row].relationship
         }else{
@@ -136,7 +154,7 @@ extension MemoViewController : UITableViewDelegate,UITableViewDataSource {
                 // 사람 기본정보 수정 가능
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "AddPersonViewController") as! AddPersonViewController
-                vc.person = self.filtered_list[indexPath.row]
+                vc.user = self.filtered_list[indexPath.row]
                 self.present(vc, animated: true, completion: nil)
             }
              return [deleteAction, editAction]
@@ -161,7 +179,7 @@ extension MemoViewController : UITableViewDelegate,UITableViewDataSource {
                 // 사람 기본정보 수정 가능
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "AddPersonViewController") as! AddPersonViewController
-                vc.person = self.list[indexPath.row]
+                vc.user = self.list[indexPath.row]
                 self.present(vc, animated: true, completion: nil)
             }
              return [deleteAction, editAction]

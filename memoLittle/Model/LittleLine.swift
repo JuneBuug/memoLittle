@@ -45,5 +45,5 @@ final class RealmString : Object {
 // 사진
 final class Photo : Object {
     @objc dynamic var createDate: Date = Date()
-    @objc dynamic var image: Data = Data()
+    @objc dynamic var image: Data?
 }

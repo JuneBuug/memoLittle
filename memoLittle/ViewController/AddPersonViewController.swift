@@ -12,25 +12,32 @@ import RealmSwift
 class AddPersonViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // 사람 정보 수정 View로 적용
 
+    @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var closeBtn: UIButton!
+    @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var relationship: UITextView!
+    @IBOutlet weak var relationshipNameLabel: UILabel!
     let realm = try! Realm()
-    var person = Person()
+    var user : Person?
+    var notificationToken: NotificationToken!
+    var personList: Results<Person>!
+    var newPhoto = Photo()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        textView.text = person.name
-        relationship.text = person.relationship
-
-        
-        profilePicture.layer.borderWidth = 0
-        profilePicture.layer.masksToBounds = false
-        profilePicture.layer.cornerRadius = profilePicture.frame.height/2
-        profilePicture.clipsToBounds = true
-        
+       
+        updateUI()
+        setupUI()
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         profilePicture.isUserInteractionEnabled = true
         profilePicture.addGestureRecognizer(tapGestureRecognizer)
+        personList = realm.objects(Person.self)
+        notificationToken = personList.addNotificationBlock({ (change) in
+            self.updateUI()
+        })
         // Do any additional setup after loading the view.
     }
 
@@ -39,6 +46,35 @@ class AddPersonViewController: UIViewController,UIImagePickerControllerDelegate,
         // Dispose of any resources that can bse recreated.
     }
     
+    func setupUI(){
+        Style.themeNight()
+        self.view.backgroundColor = Style.backgroundColor
+        textView.backgroundColor = Style.backgroundColor
+        mainView.backgroundColor = Style.backgroundColor
+        saveBtn.titleLabel?.textColor = Style.tintColor
+        closeBtn.tintColor = Style.tintColor
+        textView.textColor = Style.textColor
+        relationship.backgroundColor = Style.backgroundColor
+        relationship.textColor = Style.textColor
+        nickNameLabel.textColor = Style.tintColor
+        relationshipNameLabel.textColor = Style.tintColor
+        
+    }
+    
+    func updateUI(){
+        if let person = user{ // 맨처음에 UI가 nil이 아닐 경우에만
+            textView.text = person.name
+            relationship.text = person.relationship
+            
+            if let profile = person.profile.image {
+                profilePicture.image = UIImage(data:profile)
+            }
+            profilePicture.layer.borderWidth = 0
+            profilePicture.layer.masksToBounds = false
+            profilePicture.layer.cornerRadius = profilePicture.frame.height/2
+            profilePicture.clipsToBounds = true
+        }
+    }
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
         let imagePicker = UIImagePickerController()
@@ -46,21 +82,15 @@ class AddPersonViewController: UIViewController,UIImagePickerControllerDelegate,
         imagePicker.delegate = self
         
         self.present(imagePicker, animated: true, completion: nil)
-        // Your action
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        let newPhoto = Photo()
-        newPhoto.image = UIImageJPEGRepresentation(selectedImage, 0.01)!
-        // realm write
-        do {
-            try realm.write {
-                person.profile = newPhoto
-            }
-        } catch {
-            print("\(error)")
-        }
+        newPhoto.image = UIImageJPEGRepresentation(selectedImage, 0.01)
         profilePicture.image = selectedImage
         picker.dismiss(animated: true, completion: nil)
     }
@@ -70,7 +100,8 @@ class AddPersonViewController: UIViewController,UIImagePickerControllerDelegate,
         // Query and update from any thread
         let name = self.textView.text!
         let relationship = self.relationship.text!
-        let personRef = ThreadSafeReference(to: person)
+        let personRef = ThreadSafeReference(to: user!)
+      
         // thread conflict 제거용
         DispatchQueue(label: "background").async {
             autoreleasepool {
@@ -79,6 +110,7 @@ class AddPersonViewController: UIViewController,UIImagePickerControllerDelegate,
                     return // person was deleted
                 }
                 try! realm.write {
+                    person.profile = self.newPhoto
                     person.name = name
                     person.relationship = relationship
                 }

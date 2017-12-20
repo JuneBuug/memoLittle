@@ -11,6 +11,7 @@ import RealmSwift
 
 class PersonDetailViewController: UIViewController {
 
+    @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     // 이 상세 정보의 메인 object가 되는 사람
@@ -22,7 +23,9 @@ class PersonDetailViewController: UIViewController {
     
     var list : Results<LittleLine>!
     var notificationToken: NotificationToken!
+    var notificationToken2: NotificationToken!
     var realm: Realm!
+    var personList: Results<Person>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +38,23 @@ class PersonDetailViewController: UIViewController {
         tableView.register(UINib(nibName: "LittleLineEventTableViewCell", bundle: nil), forCellReuseIdentifier: "LittleLineEventTableViewCell")
         
         list = realm.objects(LittleLine.self)
+        personList = realm.objects(Person.self)
         filterList()
         notificationToken = list.addNotificationBlock({ (change) in
             self.tableView.reloadData()
         })
+        notificationToken2 = personList.addNotificationBlock({ (change) in
+             self.tableView.reloadData()
+        })
+        setupUI()
         // Do any additional setup after loading the view.
+    }
+
+    func setupUI(){
+        Style.themeNight()
+        self.view.backgroundColor = Style.backgroundColor
+        self.tableView.backgroundColor = Style.backgroundColor
+        self.closeBtn.tintColor = Style.tintColor
     }
 
     
@@ -119,6 +134,14 @@ extension PersonDetailViewController : UITableViewDelegate, UITableViewDataSourc
         let headerView = PeopleDetailHeader.instanceFromNib()
         headerView.personName.text = person.name
         headerView.relationship.text = person.relationship
+        
+        if let profile = person.profile.image {
+            headerView.profilePicture.image = UIImage(data:profile)
+        }
+        headerView.profilePicture.layer.borderWidth = 0
+        headerView.profilePicture.layer.masksToBounds = false
+        headerView.profilePicture.layer.cornerRadius = headerView.profilePicture.frame.height/2
+        headerView.profilePicture.clipsToBounds = true
         return headerView
     }
 }

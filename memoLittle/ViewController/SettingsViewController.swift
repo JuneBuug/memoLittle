@@ -10,12 +10,14 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var tableView: UITableView!
     var list  = ["접근성 설정","개인정보","테마 설정"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
         tableView.dataSource = self
+        setupUI()
         // Do any additional setup after loading the view.
     }
 
@@ -24,6 +26,13 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func setupUI(){
+        Style.themeNight()
+        self.view.backgroundColor = Style.backgroundColor
+        self.tableView.backgroundColor = Style.backgroundColor
+        navBar.barTintColor = Style.backgroundColor
+        navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Style.textColor]
+    }
 
     /*
     // MARK: - Navigation
@@ -48,6 +57,9 @@ extension SettingsViewController : UITableViewDelegate,UITableViewDataSource {
         let cell = UITableViewCell()
         cell.accessoryType = .none
         cell.textLabel?.text = list[indexPath.row]
+        cell.textLabel?.textColor = Style.textColor
+        cell.backgroundColor = Style.backgroundColor
+        cell.accessoryView?.tintColor = Style.textColor
         return cell
     }
     

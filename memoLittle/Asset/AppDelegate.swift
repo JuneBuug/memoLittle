@@ -46,10 +46,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
       
        
-        UISearchBar.appearance().barTintColor = UIColor(red: 241.0/255.0,green: 241.0/255.0 ,blue: 239.0/255.0, alpha: 1.0)
-        UISearchBar.appearance().tintColor =  UIColor(red: 71.0/255.0,green: 71.0/255.0 ,blue: 71.0/255.0, alpha: 1.0)
+//        UISearchBar.appearance().barTintColor = UIColor(red: 241.0/255.0,green: 241.0/255.0 ,blue: 239.0/255.0, alpha: 1.0)
+//        UISearchBar.appearance().tintColor =  UIColor(red: 71.0/255.0,green: 71.0/255.0 ,blue: 71.0/255.0, alpha: 1.0)
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor =  UIColor(red: 241.0/255.0,green: 241.0/255.0 ,blue: 239.0/255.0, alpha: 1.0)
         
+        UISearchBar.appearance().barTintColor = Style.backgroundColor
+        UISearchBar.appearance().tintColor =  Style.textColor
+        UITabBar.appearance().tintColor = Style.tintColor
         return true
     }
 

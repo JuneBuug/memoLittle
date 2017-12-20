@@ -53,6 +53,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="personName" destination="X6h-5u-SVQ" id="Phb-OB-9C4"/>
+                <outlet property="profilePicture" destination="tOx-Zv-guO" id="z9d-GO-Uwv"/>
                 <outlet property="relationship" destination="Iv5-6t-SoE" id="wHM-jM-YMl"/>
             </connections>
             <point key="canvasLocation" x="38.5" y="-283"/>
