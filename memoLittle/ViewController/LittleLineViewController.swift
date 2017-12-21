@@ -153,7 +153,12 @@ extension LittleLineViewController: UITableViewDelegate, UITableViewDataSource {
         
         if isFiltering(){
             let cell = tableView.dequeueReusableCell(withIdentifier: "LittleLineLikeTableViewCell",for: indexPath) as! LittleLineLikeTableViewCell
-            cell.personName.text? = (filtered_list[indexPath.row].writer?.name)!
+            
+            if let writer = list[indexPath.row].writer {
+                cell.personName.text? = writer.name
+            }else{
+                cell.personName.text =  "메모리틀"
+            }
             cell.likeObject.text? = filtered_list[indexPath.row].objectName
             
             if filtered_list[indexPath.row].tags.first?.stringValue != "" {
@@ -170,7 +175,12 @@ extension LittleLineViewController: UITableViewDelegate, UITableViewDataSource {
             
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "LittleLineLikeTableViewCell",for: indexPath) as! LittleLineLikeTableViewCell
-            cell.personName.text? = (list[indexPath.row].writer?.name)!
+            if let writer = list[indexPath.row].writer {
+                cell.personName.text? = writer.name
+            }else{
+                cell.personName.text =  "메모리틀"
+            }
+            
             cell.likeObject.text? = list[indexPath.row].objectName
             
             if list[indexPath.row].tags.first?.stringValue != "" {
@@ -183,7 +193,6 @@ extension LittleLineViewController: UITableViewDelegate, UITableViewDataSource {
             }else{
                 cell.tags.isHidden = true
             }
-            return cell
             return cell
         }
     }

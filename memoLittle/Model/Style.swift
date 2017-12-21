@@ -44,4 +44,22 @@ struct Style {
         textColor = UIColor.black
         lineColor = UIColor(red: 71.0/255.0, green: 71.0/255.0, blue: 71.0/255.0, alpha: 1.0)
     }
+    
+    static func themeBlack(){
+        backgroundColor = UIColor.black
+        tintColor = UIColor.white
+        writeBackgroundColor = UIColor.black
+        hashtagColor = UIColor.white
+        textColor = UIColor.white
+        lineColor = UIColor(red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 6.0)
+    }
+    
+    static func themeDribble(){
+        backgroundColor = UIColor.white
+        tintColor = UIColor(red: 234.0/255.0,green: 76.0/255.0,blue:137.0/255.0,alpha: 1.0)
+        writeBackgroundColor = UIColor.white
+        hashtagColor = UIColor(red: 234.0/255.0,green: 76.0/255.0,blue:137.0/255.0,alpha: 1.0)
+        textColor = UIColor.black
+        lineColor = UIColor(red: 71.0/255.0, green: 71.0/255.0, blue: 71.0/255.0, alpha: 1.0)
+    }
 }

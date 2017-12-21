@@ -95,8 +95,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Style.themeNormal()
         }else if selectedIndex == 1{
             Style.themeNight()
-        }else{
+        }else if selectedIndex == 2{
             Style.themeTwitter()
+        }else if selectedIndex == 3{
+            Style.themeBlack()
+        }else{
+            Style.themeDribble()
         }
     }
 

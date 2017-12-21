@@ -14,7 +14,7 @@ class ThemeSelectViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var selectedIndex = 0
-    var list = ["기본테마 : Default Theme","밤 테마 : Night Theme","트위터 테마 : Twitter Theme"]
+    var list = ["기본테마 : Default Theme","한밤 테마 : MidNight Theme","트위터 테마 : Twitter Theme","블랙 테마 : Black Theme","드리블 테마: Dribbble Theme"]
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -56,8 +56,12 @@ class ThemeSelectViewController: UIViewController {
             Style.themeNormal()
         }else if selectedIndex == 1{
             Style.themeNight()
-        }else{
+        }else if selectedIndex == 2{
             Style.themeTwitter()
+        }else if selectedIndex == 3{
+            Style.themeBlack()
+        }else{
+            Style.themeDribble()
         }
         UserDefaults.standard.set(selectedIndex,forKey:"themeNumber")
         
