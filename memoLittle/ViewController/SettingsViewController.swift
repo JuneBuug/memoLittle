@@ -69,12 +69,28 @@ extension SettingsViewController : UITableViewDelegate,UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: false)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        if indexPath.row == 0 {
+        if indexPath.row == 0 { // 접근성 설정
             let vc = storyboard.instantiateViewController(withIdentifier: "TextSizeViewController") as! TextSizeViewController
             self.show(vc, sender: nil)
-        }else if indexPath.row == 1 {
+        }else if indexPath.row == 1 { // 테마 설정
             let vc = storyboard.instantiateViewController(withIdentifier: "ThemeSelectViewController") as! ThemeSelectViewController
             self.show(vc, sender: nil)
+        }else if indexPath.row == 2 { // 의견 제출
+            let alert = UIAlertController(title: "의견 Feedback", message: "MemoLittle에 대한 의견을 적어주세요. Submit your free thoughts about memoLittle.", preferredStyle: .alert)
+            
+            //2. Add the text field. You can configure it however you need.
+            alert.addTextField { (textField) in
+                textField.text = ""
+            }
+            
+            // 3. Grab the value from the text field, and print it when the user clicks OK.
+            alert.addAction(UIAlertAction(title: "전송 Send", style: .default, handler: { [weak alert] (_) in
+                let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+                Network.dataPost(text:(textField?.text)!)
+            }))
+            
+            // 4. Present the alert.
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
