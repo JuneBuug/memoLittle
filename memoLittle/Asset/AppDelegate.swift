@@ -54,6 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UISearchBar.appearance().barTintColor = Style.backgroundColor
         UISearchBar.appearance().tintColor =  Style.textColor
         UITabBar.appearance().tintColor = Style.tintColor
+        UITabBar.appearance().backgroundColor = Style.backgroundColor
         return true
     }
 

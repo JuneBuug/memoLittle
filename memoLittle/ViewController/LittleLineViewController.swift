@@ -68,7 +68,6 @@ class LittleLineViewController: UIViewController {
         navBar.barTintColor = Style.backgroundColor
         navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Style.textColor]
         titleItem.rightBarButtonItem?.tintColor = Style.tintColor
-        searchController.view.backgroundColor = Style.backgroundColor
         searchController.searchBar.backgroundColor = Style.backgroundColor
         searchController.searchBar.barTintColor = Style.backgroundColor
         searchController.searchBar.tintColor = Style.textColor

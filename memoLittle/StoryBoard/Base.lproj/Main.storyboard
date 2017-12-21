@@ -29,7 +29,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="적기 Memo" largeTitleDisplayMode="never" id="gVx-Tk-UVb">
-                                        <barButtonItem key="rightBarButtonItem" title="Item" image="ic_add" id="PNz-WC-phl">
+                                        <barButtonItem key="rightBarButtonItem" image="ic_add" id="PNz-WC-phl">
                                             <color key="tintColor" red="0.0" green="0.68643361329999997" blue="0.49380367990000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="onTouchAddBtn:" destination="iuW-30-HaE" id="pGJ-A4-s06"/>
@@ -506,7 +506,7 @@
                                 <items>
                                     <navigationItem title="테마선택 Theme Selection" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="3NW-Vn-D3m">
                                         <barButtonItem key="backBarButtonItem" title="뒤로" id="0iU-lt-F90"/>
-                                        <barButtonItem key="leftBarButtonItem" title="뒤로 Back" id="MdX-nb-2uB">
+                                        <barButtonItem key="leftBarButtonItem" image="ic_exit" id="MdX-nb-2uB">
                                             <connections>
                                                 <action selector="onBackBtn:" destination="J2j-Bp-y5q" id="LOB-aN-9DQ"/>
                                             </connections>
