@@ -30,6 +30,7 @@ class LittleLineLikeTableViewCell: UITableViewCell {
         personName.textColor = Style.textColor
         likeObject.textColor = Style.textColor
         tags.textColor = Style.tintColor
+        likeObject.font =  UIFont(name : likeObject.font.fontName, size: CGFloat(Style.fontSize))
         self.contentView.backgroundColor = Style.backgroundColor
     }
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -16,6 +16,7 @@ struct Style {
     static var hashtagColor = UIColor(red: 255.0/255.0, green: 197.0/255.0, blue: 6.0/255.0, alpha: 1.0)
     static var textColor = UIColor(red: 71.0/255.0, green: 71.0/255.0, blue: 71.0/255.0, alpha: 1.0)
     static var lineColor = UIColor(red: 210.0/255.0, green: 210.0/255.0, blue: 210.0/255.0, alpha: 1.0)
+    static var fontSize: Float = 17.0
     
     static func themeNight(){
         backgroundColor = UIColor(red: 27.0/255.0 , green: 41.0/255.0, blue : 54.0/255.0, alpha :1.0)

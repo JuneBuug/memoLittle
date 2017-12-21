@@ -579,10 +579,96 @@
             </objects>
             <point key="canvasLocation" x="2638" y="1617"/>
         </scene>
+        <!--텍스트크기조절-->
+        <scene sceneID="pbh-eP-BEN">
+            <objects>
+                <viewController storyboardIdentifier="TextSizeViewController" title="텍스트크기조절" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6UW-ha-zbz" customClass="TextSizeViewController" customModule="memoLittle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9z4-5C-Vfz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKU-P9-47E">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Nxd-eq-ivj"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="텍스트 크기 조절 Text Size" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="d1u-Wx-Iew">
+                                        <barButtonItem key="backBarButtonItem" title="뒤로" id="Osn-zA-Ixb"/>
+                                        <barButtonItem key="leftBarButtonItem" image="ic_exit" id="zrL-wW-noL">
+                                            <connections>
+                                                <action selector="onCloseBtn:" destination="6UW-ha-zbz" id="w9H-Nx-I1l"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="17" minValue="12" maxValue="22" minimumValueImage="ic_literal_small" maximumValueImage="ic_literal_big" translatesAutoresizingMaskIntoConstraints="NO" id="FQk-wj-Swf">
+                                <rect key="frame" x="-2" y="352" width="418" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="VOs-Jp-1nM"/>
+                                </constraints>
+                                <color key="minimumTrackTintColor" red="0.0" green="0.68627450980000004" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="onSliderValueChanged:" destination="6UW-ha-zbz" eventType="valueChanged" id="g4C-cQ-N7Y"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="샘플 텍스트입니다. This is Sample Text." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adv-6g-miR">
+                                <rect key="frame" x="0.0" y="208" width="414" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="sTe-zA-RSF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미리보기 Preview ☺️" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4g-GY-yr8">
+                                <rect key="frame" x="132" y="112" width="151" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="151" id="e5X-y8-2Kb"/>
+                                    <constraint firstAttribute="height" constant="21" id="k00-c2-rr8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.68627450980000004" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gKU-P9-47E" firstAttribute="top" secondItem="7iX-T0-sUz" secondAttribute="top" id="0Gr-EG-XoQ"/>
+                            <constraint firstItem="R4g-GY-yr8" firstAttribute="top" secondItem="gKU-P9-47E" secondAttribute="bottom" constant="48" id="4El-Zv-5Ld"/>
+                            <constraint firstItem="gKU-P9-47E" firstAttribute="leading" secondItem="7iX-T0-sUz" secondAttribute="leading" id="4kI-zk-NNS"/>
+                            <constraint firstItem="7iX-T0-sUz" firstAttribute="bottom" secondItem="FQk-wj-Swf" secondAttribute="bottom" constant="320" id="6NK-wB-lBa"/>
+                            <constraint firstItem="7iX-T0-sUz" firstAttribute="trailing" secondItem="gKU-P9-47E" secondAttribute="trailing" id="JjC-oE-0lc"/>
+                            <constraint firstItem="FQk-wj-Swf" firstAttribute="width" secondItem="9z4-5C-Vfz" secondAttribute="width" id="MP7-rf-Sil"/>
+                            <constraint firstItem="FQk-wj-Swf" firstAttribute="centerX" secondItem="adv-6g-miR" secondAttribute="centerX" id="PYE-bD-7fR"/>
+                            <constraint firstItem="R4g-GY-yr8" firstAttribute="centerX" secondItem="7iX-T0-sUz" secondAttribute="centerX" id="QKT-Io-JCl"/>
+                            <constraint firstItem="FQk-wj-Swf" firstAttribute="top" secondItem="adv-6g-miR" secondAttribute="bottom" constant="64" id="cUk-hu-46D"/>
+                            <constraint firstItem="adv-6g-miR" firstAttribute="width" secondItem="9z4-5C-Vfz" secondAttribute="width" id="kBt-vS-Etp"/>
+                            <constraint firstItem="adv-6g-miR" firstAttribute="centerX" secondItem="7iX-T0-sUz" secondAttribute="centerX" id="y0Q-hq-8aA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7iX-T0-sUz"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="설정 Settings" image="ic_more" id="9hK-uG-07v"/>
+                    <connections>
+                        <outlet property="sampleLabel" destination="adv-6g-miR" id="ILx-vG-SGx"/>
+                        <outlet property="slider" destination="FQk-wj-Swf" id="cl3-D5-PO6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hws-01-33c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3328.985507246377" y="1616.576086956522"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ic_add" width="26" height="26"/>
         <image name="ic_exit" width="16" height="15"/>
+        <image name="ic_literal_big" width="80" height="80"/>
+        <image name="ic_literal_small" width="80" height="80"/>
         <image name="ic_more" width="26" height="26"/>
         <image name="ic_timeline" width="26" height="26"/>
         <image name="person_default" width="543" height="544"/>

@@ -26,6 +26,7 @@
 		0E6106D71F97691800E87765 /* AddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6106D61F97691800E87765 /* AddPersonViewController.swift */; };
 		0E7F82C41FEA432B001B6A2D /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F82C31FEA432B001B6A2D /* Style.swift */; };
 		0E7F82C61FEA71A7001B6A2D /* ThemeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F82C51FEA71A7001B6A2D /* ThemeSelectViewController.swift */; };
+		0E82A69E1FEC02EA00944B4C /* TextSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82A69D1FEC02EA00944B4C /* TextSizeViewController.swift */; };
 		0EA1313D1FA1B9BB00028291 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA1313C1FA1B9BB00028291 /* SettingsViewController.swift */; };
 		0EC5AED41F9216EE00DE221B /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5AED31F9216EE00DE221B /* MemoViewController.swift */; };
 		0ECBFD551FD74F7500B333D1 /* memoCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ECBFD531FD74F7500B333D1 /* memoCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -101,6 +102,7 @@
 		0E6106D61F97691800E87765 /* AddPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonViewController.swift; sourceTree = "<group>"; };
 		0E7F82C31FEA432B001B6A2D /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		0E7F82C51FEA71A7001B6A2D /* ThemeSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ThemeSelectViewController.swift; path = memoLittle/ThemeSelectViewController.swift; sourceTree = SOURCE_ROOT; };
+		0E82A69D1FEC02EA00944B4C /* TextSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSizeViewController.swift; sourceTree = "<group>"; };
 		0EA1313C1FA1B9BB00028291 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0EC5AED31F9216EE00DE221B /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 		0ECBFD511FD74F7500B333D1 /* memoCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = memoCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +162,7 @@
 				0E48F50D1FB8043500CB6577 /* PersonDetailViewController.swift */,
 				0EA1313C1FA1B9BB00028291 /* SettingsViewController.swift */,
 				0E7F82C51FEA71A7001B6A2D /* ThemeSelectViewController.swift */,
+				0E82A69D1FEC02EA00944B4C /* TextSizeViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				0E48F5141FB8073800CB6577 /* PeopleDetailHeader.swift in Sources */,
 				0E7F82C61FEA71A7001B6A2D /* ThemeSelectViewController.swift in Sources */,
 				0E48F50E1FB8043500CB6577 /* PersonDetailViewController.swift in Sources */,
+				0E82A69E1FEC02EA00944B4C /* TextSizeViewController.swift in Sources */,
 				0EA1313D1FA1B9BB00028291 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

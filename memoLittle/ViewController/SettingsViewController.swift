@@ -12,7 +12,7 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var tableView: UITableView!
-    var list  = ["접근성 설정","테마 설정","앱정보"]
+    var list  = ["접근성 설정 Accessibility","테마 설정 Theme Settings","의견 제출 Submit Feedback", "앱정보 About"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
@@ -67,9 +67,12 @@ extension SettingsViewController : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        if indexPath.row == 1 {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if indexPath.row == 0 {
+            let vc = storyboard.instantiateViewController(withIdentifier: "TextSizeViewController") as! TextSizeViewController
+            self.show(vc, sender: nil)
+        }else if indexPath.row == 1 {
             let vc = storyboard.instantiateViewController(withIdentifier: "ThemeSelectViewController") as! ThemeSelectViewController
             self.show(vc, sender: nil)
         }
