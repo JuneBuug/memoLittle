@@ -61,6 +61,7 @@ extension SettingsViewController : UITableViewDelegate,UITableViewDataSource {
         cell.textLabel?.textColor = Style.textColor
         cell.backgroundColor = Style.backgroundColor
         cell.accessoryView?.tintColor = Style.textColor
+        cell.selectionStyle = .none
         return cell
     }
     

@@ -48,6 +48,9 @@ class PersonDetailViewController: UIViewController {
         })
         setupUI()
         NotificationCenter.default.addObserver(self, selector: #selector(setupUI), name: NSNotification.Name("updateTheme"), object: nil)
+        
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPress))
+        self.tableView.addGestureRecognizer(longPressRecognizer)
         // Do any additional setup after loading the view.
     }
 
@@ -57,6 +60,24 @@ class PersonDetailViewController: UIViewController {
         self.closeBtn.tintColor = Style.tintColor
     }
 
+    
+    @objc func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
+        
+        if longPressGestureRecognizer.state == UIGestureRecognizerState.began {
+            self.becomeFirstResponder()
+            var touchPoint = longPressGestureRecognizer.location(in: self.view)
+            touchPoint.x += 164
+            if let indexPath = tableView.indexPathForRow(at: touchPoint) {
+                let textToShare = list[indexPath.row].objectName
+                let activityVC = UIActivityViewController(activityItems: [textToShare], applicationActivities: nil)
+                activityVC.popoverPresentationController?.sourceView = self.view
+                activityVC.excludedActivityTypes = [ UIActivityType.airDrop ]
+                // 현재 뷰에서 present
+                self.present(activityVC, animated: true, completion: nil)
+
+            }
+        }
+    }
     
     func setupRealm() {
         // Log in existing user with username and password

@@ -110,7 +110,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="메모리틀 MemoLittle" largeTitleDisplayMode="never" id="QiD-Sg-6EV">
-                                        <barButtonItem key="rightBarButtonItem" image="ic_tts" id="VTc-Jp-kXR">
+                                        <barButtonItem key="rightBarButtonItem" enabled="NO" id="VTc-Jp-kXR">
                                             <inset key="largeContentSizeImageInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                                             <connections>
                                                 <action selector="onTouchTTSBtn:" destination="sst-3G-5jA" id="Hrt-wL-gvL"/>
@@ -225,7 +225,7 @@
                                     <navigationItem title="설정 Settings" largeTitleDisplayMode="never" id="S4y-V9-TC8"/>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Fw-ph-mJ7">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Fw-ph-mJ7">
                                 <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -454,7 +454,7 @@
                                     <action selector="onTouchClose:" destination="EbB-Ai-SBG" eventType="touchUpInside" id="GGB-J0-Xe4"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="164" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RnV-R0-XOU">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="164" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RnV-R0-XOU">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -462,7 +462,7 @@
                                         <rect key="frame" x="0.0" y="164" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DeJ-Ff-xye" id="eHx-jI-ud7">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -570,7 +570,6 @@
         <image name="ic_exit" width="16" height="15"/>
         <image name="ic_more" width="26" height="26"/>
         <image name="ic_timeline" width="26" height="26"/>
-        <image name="ic_tts" width="24" height="24"/>
         <image name="person_default" width="543" height="544"/>
     </resources>
 </document>
