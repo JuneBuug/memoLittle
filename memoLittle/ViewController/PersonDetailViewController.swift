@@ -80,6 +80,12 @@ class PersonDetailViewController: UIViewController {
         }
     }
     
+    @IBAction func writeOnThisPerson(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "WriteViewController") as! WriteViewController
+        vc.preSetText = "@"+person.name + " "
+        self.present(vc, animated: true, completion: nil)
+    }
     func setupRealm() {
         // Log in existing user with username and password
         do {

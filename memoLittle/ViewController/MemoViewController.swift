@@ -69,7 +69,7 @@ class MemoViewController: UIViewController {
             print("\(error)")
         }
     }
-    // 사람 추가 view로 이동
+    // 메모추가 view로 이동
     @IBAction func onTouchAddBtn(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "WriteViewController") as! WriteViewController

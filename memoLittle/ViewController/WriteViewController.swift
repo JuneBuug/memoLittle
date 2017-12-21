@@ -16,6 +16,7 @@ class WriteViewController: UIViewController,UITextViewDelegate {
     let realm = try! Realm()
     var placeholderLabel : UILabel!
     
+    var preSetText = ""
     var list : Results<Person>! // 현재 등록되어 있는 사람 목록
     var notificationToken: NotificationToken!
     var attributed : NSMutableAttributedString! // String attr
@@ -25,6 +26,7 @@ class WriteViewController: UIViewController,UITextViewDelegate {
         setupUI()
         list = realm.objects(Person.self)
         
+        textView.text = preSetText
         let keyboardToolbar = UIToolbar()
         keyboardToolbar.sizeToFit()
         keyboardToolbar.isTranslucent = false

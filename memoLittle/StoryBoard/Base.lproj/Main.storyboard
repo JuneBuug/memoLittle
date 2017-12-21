@@ -470,12 +470,25 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efv-xP-Jc9">
+                                <rect key="frame" x="370" y="28" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="T7g-kD-VOf"/>
+                                    <constraint firstAttribute="width" constant="32" id="vxv-P8-acU"/>
+                                </constraints>
+                                <state key="normal" image="ic_add"/>
+                                <connections>
+                                    <action selector="writeOnThisPerson:" destination="EbB-Ai-SBG" eventType="touchUpInside" id="R7S-Vu-MYn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="RnV-R0-XOU" firstAttribute="width" secondItem="wDl-NM-FvS" secondAttribute="width" id="9iz-5r-Qet"/>
                             <constraint firstItem="RnV-R0-XOU" firstAttribute="top" secondItem="555-oZ-Tbb" secondAttribute="top" constant="44" id="Cg9-UJ-ahA"/>
+                            <constraint firstItem="Efv-xP-Jc9" firstAttribute="centerY" secondItem="ecC-ww-yyw" secondAttribute="centerY" id="Df5-rE-QBK"/>
                             <constraint firstItem="ecC-ww-yyw" firstAttribute="top" secondItem="555-oZ-Tbb" secondAttribute="top" constant="12" id="GgF-JJ-Xwa"/>
+                            <constraint firstItem="555-oZ-Tbb" firstAttribute="trailing" secondItem="Efv-xP-Jc9" secondAttribute="trailing" constant="12" id="MIM-ED-mKq"/>
                             <constraint firstItem="ecC-ww-yyw" firstAttribute="leading" secondItem="555-oZ-Tbb" secondAttribute="leading" constant="12" id="Utu-CL-8n1"/>
                             <constraint firstItem="RnV-R0-XOU" firstAttribute="leading" secondItem="555-oZ-Tbb" secondAttribute="leading" id="dx3-KH-0pl"/>
                             <constraint firstItem="555-oZ-Tbb" firstAttribute="bottom" secondItem="RnV-R0-XOU" secondAttribute="bottom" id="wQQ-5c-cWB"/>
