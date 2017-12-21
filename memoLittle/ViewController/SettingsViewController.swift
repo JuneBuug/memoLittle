@@ -91,6 +91,9 @@ extension SettingsViewController : UITableViewDelegate,UITableViewDataSource {
             
             // 4. Present the alert.
             self.present(alert, animated: true, completion: nil)
+        }else { // 앱 정보
+            let vc = storyboard.instantiateViewController(withIdentifier: "AppInfoViewController") as! AppInfoViewController
+            self.show(vc, sender: nil)
         }
     }
     

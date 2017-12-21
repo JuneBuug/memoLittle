@@ -28,6 +28,7 @@
 		0E7F82C61FEA71A7001B6A2D /* ThemeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F82C51FEA71A7001B6A2D /* ThemeSelectViewController.swift */; };
 		0E82A69E1FEC02EA00944B4C /* TextSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82A69D1FEC02EA00944B4C /* TextSizeViewController.swift */; };
 		0E82A6A01FEC12E900944B4C /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82A69F1FEC12E900944B4C /* Network.swift */; };
+		0E82A6A21FEC1A9100944B4C /* AppInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82A6A11FEC1A9100944B4C /* AppInfoViewController.swift */; };
 		0EA1313D1FA1B9BB00028291 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA1313C1FA1B9BB00028291 /* SettingsViewController.swift */; };
 		0EC5AED41F9216EE00DE221B /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5AED31F9216EE00DE221B /* MemoViewController.swift */; };
 		0ECBFD551FD74F7500B333D1 /* memoCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ECBFD531FD74F7500B333D1 /* memoCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -105,6 +106,7 @@
 		0E7F82C51FEA71A7001B6A2D /* ThemeSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ThemeSelectViewController.swift; path = memoLittle/ThemeSelectViewController.swift; sourceTree = SOURCE_ROOT; };
 		0E82A69D1FEC02EA00944B4C /* TextSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSizeViewController.swift; sourceTree = "<group>"; };
 		0E82A69F1FEC12E900944B4C /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		0E82A6A11FEC1A9100944B4C /* AppInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppInfoViewController.swift; path = memoLittle/AppInfoViewController.swift; sourceTree = SOURCE_ROOT; };
 		0EA1313C1FA1B9BB00028291 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0EC5AED31F9216EE00DE221B /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 		0ECBFD511FD74F7500B333D1 /* memoCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = memoCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +167,7 @@
 				0EA1313C1FA1B9BB00028291 /* SettingsViewController.swift */,
 				0E7F82C51FEA71A7001B6A2D /* ThemeSelectViewController.swift */,
 				0E82A69D1FEC02EA00944B4C /* TextSizeViewController.swift */,
+				0E82A6A11FEC1A9100944B4C /* AppInfoViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 			files = (
 				0E238CE51F90AD9D008330D6 /* LittleLineEventTableViewCell.swift in Sources */,
 				0E238CDA1F90A16B008330D6 /* LittleLineViewController.swift in Sources */,
+				0E82A6A21FEC1A9100944B4C /* AppInfoViewController.swift in Sources */,
 				0EC5AED41F9216EE00DE221B /* MemoViewController.swift in Sources */,
 				0E238CE11F90A58D008330D6 /* LittleLineLikeTableViewCell.swift in Sources */,
 				0E3095251F8FB09B00A2F7D3 /* AppDelegate.swift in Sources */,

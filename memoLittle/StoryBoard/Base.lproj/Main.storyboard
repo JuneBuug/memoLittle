@@ -663,6 +663,63 @@
             </objects>
             <point key="canvasLocation" x="3328.985507246377" y="1616.576086956522"/>
         </scene>
+        <!--앱 정보-->
+        <scene sceneID="y0u-ld-NEI">
+            <objects>
+                <viewController storyboardIdentifier="AppInfoViewController" title="앱 정보" useStoryboardIdentifierAsRestorationIdentifier="YES" id="89O-e5-XOd" customClass="AppInfoViewController" customModule="memoLittle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8fp-8m-DXd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VxW-aA-0Gl">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="YcB-q9-NOk"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="앱 정보 About" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="15T-9z-89D">
+                                        <barButtonItem key="backBarButtonItem" title="뒤로" id="aq1-xO-sXS"/>
+                                        <barButtonItem key="leftBarButtonItem" image="ic_exit" id="l2W-Mm-eMt">
+                                            <connections>
+                                                <action selector="onCloseBtn:" destination="89O-e5-XOd" id="iMr-a5-wxX"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DP0-F2-9yf">
+                                <rect key="frame" x="20" y="108" width="374" height="505"/>
+                                <mutableString key="text">안녕하세요, memoLittle 을 만든 김준영입니다. ☺️  동기🙌 본 어플리케이션은  고려대학교 2017년 가을학기 졸업프로젝트로 제작되었습니다.  memoLittle은,  '사람에 대한 소소한 사실을 기록하는 메모 앱' 을 지향하고 있습니다.   메모리틀은 주로 universal design, siri를 이용한 activation고려하고 만들어진 어플입니다.  이 과정에서 UI components의 동작을 파악하고, 새로운 modal을 탐구하며 배워나갈 수 있었습니다.  기능✨
+01 태그를 통한 사람 등록, 메모 작성 02 등록한 메모 사람별 확인 
+03 사람과의 관계 설정 04 메모 공유 05 Siri로 메모 작성  06 사람별 메모 검색 07 메모 내용별 검색 08 Accessibility : 메모 폰트 크기 변환 09 Accessibility : Theme 변환 10 개발자에게 문의하기  메모리틀을 사용해주셔서 감사합니다 ☺️</mutableString>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="l4q-LZ-c9d" firstAttribute="trailing" secondItem="VxW-aA-0Gl" secondAttribute="trailing" id="4v1-Jl-qOm"/>
+                            <constraint firstItem="DP0-F2-9yf" firstAttribute="centerX" secondItem="l4q-LZ-c9d" secondAttribute="centerX" id="Vth-Rs-OaN"/>
+                            <constraint firstItem="l4q-LZ-c9d" firstAttribute="bottom" secondItem="DP0-F2-9yf" secondAttribute="bottom" constant="53" id="WLO-9g-DuU"/>
+                            <constraint firstItem="VxW-aA-0Gl" firstAttribute="leading" secondItem="l4q-LZ-c9d" secondAttribute="leading" id="gCC-Ud-EbN"/>
+                            <constraint firstItem="l4q-LZ-c9d" firstAttribute="trailing" secondItem="DP0-F2-9yf" secondAttribute="trailing" constant="20" id="gWX-cg-Ptv"/>
+                            <constraint firstItem="DP0-F2-9yf" firstAttribute="leading" secondItem="l4q-LZ-c9d" secondAttribute="leading" constant="20" id="kWb-jO-mzH"/>
+                            <constraint firstItem="VxW-aA-0Gl" firstAttribute="top" secondItem="l4q-LZ-c9d" secondAttribute="top" id="nCc-Lq-1xR"/>
+                            <constraint firstItem="DP0-F2-9yf" firstAttribute="top" secondItem="VxW-aA-0Gl" secondAttribute="bottom" constant="44" id="slz-H5-Y75"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="l4q-LZ-c9d"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="설정 Settings" image="ic_more" id="47u-xK-yT9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hx6-fi-eDy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3956.521739130435" y="1616.576086956522"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ic_add" width="26" height="26"/>
