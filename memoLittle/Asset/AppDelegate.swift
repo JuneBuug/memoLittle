@@ -93,8 +93,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setTheme(selectedIndex : Int){
         if selectedIndex == 0 {
             Style.themeNormal()
-        }else{
+        }else if selectedIndex == 1{
             Style.themeNight()
+        }else{
+            Style.themeTwitter()
         }
     }
 

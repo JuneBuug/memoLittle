@@ -35,4 +35,13 @@ struct Style {
         textColor = UIColor.black
         lineColor = UIColor(red: 71.0/255.0, green: 71.0/255.0, blue: 71.0/255.0, alpha: 1.0)
     }
+    
+    static func themeTwitter(){
+        backgroundColor = UIColor.white
+        tintColor = UIColor(red: 24.0/255.0,green: 162.0/255.0,blue:240.0/255.0,alpha: 1.0)
+        writeBackgroundColor = UIColor.white
+        hashtagColor = UIColor(red: 245.0/255.0, green: 144.0/255.0, blue: 3.0/255.0, alpha: 1.0)
+        textColor = UIColor.black
+        lineColor = UIColor(red: 71.0/255.0, green: 71.0/255.0, blue: 71.0/255.0, alpha: 1.0)
+    }
 }
