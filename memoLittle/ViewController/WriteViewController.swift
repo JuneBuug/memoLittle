@@ -206,8 +206,8 @@ class WriteViewController: UIViewController,UITextViewDelegate {
     // 편집 중일 때
     func textViewDidChange(_ textView: UITextView){
         placeholderLabel.isHidden = !textView.text.isEmpty
+        textView.textColor = Style.textColor
         attributed = NSMutableAttributedString(string : textView.text)
-        setupUI()
         if checkandReturnMention(text: textView.text).0 {
             let searchString = checkandReturnMention(text: textView.text).1
             let baseString = textView.text!

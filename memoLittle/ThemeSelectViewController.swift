@@ -57,6 +57,8 @@ class ThemeSelectViewController: UIViewController {
         }else{
             Style.themeNight()
         }
+        UserDefaults.standard.set(selectedIndex,forKey:"themeNumber")
+        
         NotificationCenter.default.post(name: NSNotification.Name("updateTheme"), object: nil)
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
