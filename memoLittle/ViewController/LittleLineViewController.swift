@@ -12,6 +12,7 @@ import RealmSwift
 
 class LittleLineViewController: UIViewController {
 
+    @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var titleItem: UINavigationItem!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var tableView: UITableView!
@@ -58,12 +59,41 @@ class LittleLineViewController: UIViewController {
         tableView.register(UINib(nibName: "LittleLineEventTableViewCell", bundle: nil), forCellReuseIdentifier: "LittleLineEventTableViewCell")
         
         NotificationCenter.default.addObserver(self, selector: #selector(setupUI), name: NSNotification.Name("updateTheme"), object: nil)
+        
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPress))
+        self.tableView.addGestureRecognizer(longPressRecognizer)
         // Do any additional setup after loading the view.
         
     }
     
+    // 롱Press 시 클릭한 cell의 내용을 공유하도록 함
+    @objc func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
+        
+        if longPressGestureRecognizer.state == UIGestureRecognizerState.began {
+            self.becomeFirstResponder()
+            var touchPoint = longPressGestureRecognizer.location(in: self.view)
+            touchPoint.y -= 48
+            if let indexPath = tableView.indexPathForRow(at: touchPoint) {
+                var textToShare = ""
+                if isFiltering(){
+                    textToShare = filtered_list[indexPath.row].objectName
+                }else{
+                    textToShare = list[indexPath.row].objectName
+                }
+                let activityVC = UIActivityViewController(activityItems: [textToShare], applicationActivities: nil)
+                activityVC.popoverPresentationController?.sourceView = self.view
+                activityVC.excludedActivityTypes = [ UIActivityType.airDrop ]
+                // 현재 뷰에서 present
+                self.present(activityVC, animated: true, completion: nil)
+                
+            }
+        }
+    }
+    
+    
     @objc func setupUI(){
         self.view.backgroundColor = Style.backgroundColor
+        backgroundView.backgroundColor = Style.backgroundColor
         self.tableView.backgroundColor = Style.backgroundColor
         navBar.barTintColor = Style.backgroundColor
         navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Style.textColor]

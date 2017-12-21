@@ -23,6 +23,8 @@ class LittleLineLikeTableViewCell: UITableViewCell {
     }
 
     @objc func setupUI(){
+        backgroundView?.backgroundColor = Style.backgroundColor
+        contentView.backgroundColor = Style.backgroundColor
         timeline.backgroundColor = Style.lineColor
         nameSubLabel.textColor = Style.textColor
         personName.textColor = Style.textColor

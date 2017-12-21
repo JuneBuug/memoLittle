@@ -85,6 +85,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="적기 Memo" image="ic_add" id="6Qc-kP-ELI"/>
                     <connections>
+                        <outlet property="backgroundView" destination="1Ii-QN-max" id="TDV-uR-gwS"/>
                         <outlet property="navBar" destination="JvS-vV-abk" id="pLf-Kb-aND"/>
                         <outlet property="tableView" destination="gQ3-g2-wUh" id="drP-kI-eqf"/>
                         <outlet property="titleItem" destination="gVx-Tk-UVb" id="NjR-pz-4GP"/>
@@ -165,6 +166,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="리틀라인 Littleline" image="ic_timeline" id="mKU-BB-mzn"/>
                     <connections>
+                        <outlet property="backgroundView" destination="OAN-XI-RYk" id="sTa-jl-xbr"/>
                         <outlet property="navBar" destination="zG5-29-aYs" id="0a0-fM-4cV"/>
                         <outlet property="searchDisplayController" destination="f4X-Ky-rCo" id="FkA-r7-FNW"/>
                         <outlet property="tableView" destination="3kA-8E-eGA" id="8uD-Nn-rJy"/>

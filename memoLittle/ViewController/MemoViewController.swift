@@ -12,6 +12,7 @@ import RealmSwift
 class MemoViewController: UIViewController {
     //사람 목록 view
 
+    @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var titleItem: UINavigationItem!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var tableView: UITableView!

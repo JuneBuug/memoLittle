@@ -61,12 +61,13 @@ class PersonDetailViewController: UIViewController {
     }
 
     
+    // 롱Press 시 클릭한 cell의 내용을 공유하도록 함
     @objc func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
         
         if longPressGestureRecognizer.state == UIGestureRecognizerState.began {
             self.becomeFirstResponder()
             var touchPoint = longPressGestureRecognizer.location(in: self.view)
-            touchPoint.x += 164
+            touchPoint.y -= 48
             if let indexPath = tableView.indexPathForRow(at: touchPoint) {
                 let textToShare = list[indexPath.row].objectName
                 let activityVC = UIActivityViewController(activityItems: [textToShare], applicationActivities: nil)
@@ -98,15 +99,6 @@ class PersonDetailViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func filterList(){
         if list != nil {
