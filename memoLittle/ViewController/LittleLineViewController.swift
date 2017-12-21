@@ -122,30 +122,39 @@ extension LittleLineViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if isFiltering(){
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LittleLineLikeTableViewCell",for: indexPath) as! LittleLineLikeTableViewCell
+            cell.personName.text? = (filtered_list[indexPath.row].writer?.name)!
+            cell.likeObject.text? = filtered_list[indexPath.row].objectName
             
-            if filtered_list[indexPath.row].category == 0 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "LittleLineLikeTableViewCell",for: indexPath) as! LittleLineLikeTableViewCell
-//                cell.personName.text? = (filtered_list[indexPath.row].writer?.name)!
-                cell.likeObject.text? = filtered_list[indexPath.row].objectName
-                return cell
+            if filtered_list[indexPath.row].tags.first?.stringValue != "" {
+                cell.tags.isHidden = false
+                var str = ""
+                for tag in list[indexPath.row].tags {
+                    str += "#"+tag.stringValue+" "
+                }
+                cell.tags.text = str
             }else{
-                let cell = tableView.dequeueReusableCell(withIdentifier: "LittleLineEventTableViewCell",for: indexPath) as! LittleLineEventTableViewCell
-//                cell.personName.text? = (filtered_list[indexPath.row].writer?.name)!
-                cell.eventLabel.text? = filtered_list[indexPath.row].objectName
-                return cell
+                cell.tags.isHidden = true
             }
+            return cell
+            
         }else{
-            if list[indexPath.row].category == 0 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "LittleLineLikeTableViewCell",for: indexPath) as! LittleLineLikeTableViewCell
-//                cell.personName.text? = (list[indexPath.row].writer?.name)!
-                cell.likeObject.text? = list[indexPath.row].objectName
-                return cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LittleLineLikeTableViewCell",for: indexPath) as! LittleLineLikeTableViewCell
+            cell.personName.text? = (list[indexPath.row].writer?.name)!
+            cell.likeObject.text? = list[indexPath.row].objectName
+            
+            if list[indexPath.row].tags.first?.stringValue != "" {
+                cell.tags.isHidden = false
+                var str = ""
+                for tag in list[indexPath.row].tags {
+                    str += "#"+tag.stringValue+" "
+                }
+                cell.tags.text = str
             }else{
-                let cell = tableView.dequeueReusableCell(withIdentifier: "LittleLineEventTableViewCell",for: indexPath) as! LittleLineEventTableViewCell
-//                cell.personName.text? = (list[indexPath.row].writer?.name)!
-                cell.eventLabel.text? = list[indexPath.row].objectName
-                return cell
+                cell.tags.isHidden = true
             }
+            return cell
+            return cell
         }
     }
     
