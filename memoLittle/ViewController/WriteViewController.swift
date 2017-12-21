@@ -20,6 +20,8 @@ class WriteViewController: UIViewController,UITextViewDelegate {
     var list : Results<Person>! // 현재 등록되어 있는 사람 목록
     var notificationToken: NotificationToken!
     var attributed : NSMutableAttributedString! // String attr
+    var doneButton = UIBarButtonItem()
+    var moreButton = UIBarButtonItem()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,20 +36,20 @@ class WriteViewController: UIViewController,UITextViewDelegate {
         keyboardToolbar.barTintColor = Style.backgroundColor
         
         // 작성완료 버튼
-        let doneButton = UIBarButtonItem(
+        doneButton = UIBarButtonItem(
             barButtonSystemItem: .save,
             target: self,
             action: #selector(writeMemo)
         )
         
         // 더 작성하기 버튼
-        let moreButton = UIBarButtonItem(
+        moreButton = UIBarButtonItem(
             barButtonSystemItem: .add,
             target: self,
             action: #selector(moreMemo)
         )
         doneButton.tintColor = Style.tintColor
-        moreButton.tintColor = Style.textColor
+        moreButton.tintColor = Style.tintColor
         
         keyboardToolbar.items = [doneButton,moreButton]
         
@@ -74,6 +76,8 @@ class WriteViewController: UIViewController,UITextViewDelegate {
         mainView.backgroundColor = Style.backgroundColor
         textView.backgroundColor = Style.backgroundColor
         textView.textColor = Style.textColor
+        doneButton.tintColor = Style.tintColor
+        moreButton.tintColor = Style.tintColor
     }
     
     

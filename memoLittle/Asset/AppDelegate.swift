@@ -99,8 +99,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Style.themeTwitter()
         }else if selectedIndex == 3{
             Style.themeBlack()
-        }else{
+        }else if selectedIndex == 4{
             Style.themeDribble()
+        }else{
+            Style.themeWoods()
         }
     }
 

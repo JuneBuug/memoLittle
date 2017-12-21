@@ -62,4 +62,13 @@ struct Style {
         textColor = UIColor.black
         lineColor = UIColor(red: 71.0/255.0, green: 71.0/255.0, blue: 71.0/255.0, alpha: 1.0)
     }
+    
+    static func themeWoods(){
+        backgroundColor = UIColor(red: 227.0/255.0,green: 221.0/255.0,blue:194.0/255.0,alpha: 1.0)
+        tintColor = UIColor(red: 5.0/255.0,green: 53.0/255.0,blue:48.0/255.0,alpha: 1.0)
+        writeBackgroundColor = UIColor(red: 227.0/255.0,green: 221.0/255.0,blue:194.0/255.0,alpha: 1.0)
+        hashtagColor = UIColor(red: 5.0/255.0,green: 53.0/255.0,blue:48.0/255.0,alpha: 1.0)
+        textColor = UIColor.black
+        lineColor = UIColor(red: 5.0/255.0,green: 53.0/255.0,blue:48.0/255.0,alpha: 1.0)
+    }
 }
