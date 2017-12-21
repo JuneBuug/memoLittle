@@ -38,6 +38,8 @@ class AddPersonViewController: UIViewController,UIImagePickerControllerDelegate,
         notificationToken = personList.addNotificationBlock({ (change) in
             self.updateUI()
         })
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(setupUI), name: NSNotification.Name("updateTheme"), object: nil)
         // Do any additional setup after loading the view.
     }
 
@@ -46,8 +48,7 @@ class AddPersonViewController: UIViewController,UIImagePickerControllerDelegate,
         // Dispose of any resources that can bse recreated.
     }
     
-    func setupUI(){
-        Style.themeNight()
+    @objc func setupUI(){
         self.view.backgroundColor = Style.backgroundColor
         textView.backgroundColor = Style.backgroundColor
         mainView.backgroundColor = Style.backgroundColor

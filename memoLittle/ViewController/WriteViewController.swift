@@ -62,12 +62,12 @@ class WriteViewController: UIViewController,UITextViewDelegate {
         placeholderLabel.frame.origin = CGPoint(x: 5, y: (textView.font?.pointSize)! / 2)
         placeholderLabel.textColor = UIColor.lightGray
         placeholderLabel.isHidden = !textView.text.isEmpty
+        NotificationCenter.default.addObserver(self, selector: #selector(setupUI), name: NSNotification.Name("updateTheme"), object: nil)
         // Do any additional setup after loading the view.
     }
 
     
-    func setupUI(){
-        Style.themeNight()
+    @objc func setupUI(){
         self.view.backgroundColor = Style.backgroundColor
         mainView.backgroundColor = Style.backgroundColor
         textView.backgroundColor = Style.backgroundColor

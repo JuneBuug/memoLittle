@@ -47,11 +47,11 @@ class PersonDetailViewController: UIViewController {
              self.tableView.reloadData()
         })
         setupUI()
+        NotificationCenter.default.addObserver(self, selector: #selector(setupUI), name: NSNotification.Name("updateTheme"), object: nil)
         // Do any additional setup after loading the view.
     }
 
-    func setupUI(){
-        Style.themeNight()
+    @objc func setupUI(){
         self.view.backgroundColor = Style.backgroundColor
         self.tableView.backgroundColor = Style.backgroundColor
         self.closeBtn.tintColor = Style.tintColor

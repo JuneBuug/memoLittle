@@ -40,12 +40,11 @@ class MemoViewController: UIViewController {
         searchController.searchBar.placeholder = "이름 혹은 관계로 검색해보세요."
         searchController.searchBar.setValue("취소", forKey:"_cancelButtonText")
         
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(setupUI), name: NSNotification.Name("updateTheme"), object: nil)
         // Do any additional setup after loading the view.
     }
 
-    func setupUI(){
-        Style.themeNight()
+    @objc func setupUI(){
         self.view.backgroundColor = Style.backgroundColor
         self.tableView.backgroundColor = Style.backgroundColor
         navBar.barTintColor = Style.backgroundColor
@@ -55,6 +54,7 @@ class MemoViewController: UIViewController {
         searchController.searchBar.backgroundColor = Style.backgroundColor
         searchController.searchBar.barTintColor = Style.backgroundColor
         searchController.searchBar.tintColor = Style.textColor
+        tableView.reloadData()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

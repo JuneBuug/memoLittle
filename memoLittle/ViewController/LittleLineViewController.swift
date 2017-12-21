@@ -56,12 +56,13 @@ class LittleLineViewController: UIViewController {
 
         tableView.register(UINib(nibName: "LittleLineLikeTableViewCell", bundle: nil), forCellReuseIdentifier: "LittleLineLikeTableViewCell")
         tableView.register(UINib(nibName: "LittleLineEventTableViewCell", bundle: nil), forCellReuseIdentifier: "LittleLineEventTableViewCell")
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(setupUI), name: NSNotification.Name("updateTheme"), object: nil)
         // Do any additional setup after loading the view.
         
     }
     
-    func setupUI(){
-        Style.themeNight()
+    @objc func setupUI(){
         self.view.backgroundColor = Style.backgroundColor
         self.tableView.backgroundColor = Style.backgroundColor
         navBar.barTintColor = Style.backgroundColor
@@ -71,6 +72,7 @@ class LittleLineViewController: UIViewController {
         searchController.searchBar.backgroundColor = Style.backgroundColor
         searchController.searchBar.barTintColor = Style.backgroundColor
         searchController.searchBar.tintColor = Style.textColor
+        tableView.reloadData()
     }
 
     func setupRealm() {

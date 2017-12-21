@@ -245,12 +245,12 @@
                     <tabBarItem key="tabBarItem" title="설정 Settings" image="ic_more" id="egA-d4-Bnc"/>
                     <connections>
                         <outlet property="navBar" destination="ogX-hf-opD" id="JCx-h3-cBI"/>
-                        <outlet property="tableView" destination="4Fw-ph-mJ7" id="nIH-vy-P8T"/>
+                        <outlet property="tableView" destination="4Fw-ph-mJ7" id="0ac-6V-DGQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qCo-aG-1gv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1966" y="1611"/>
+            <point key="canvasLocation" x="1965" y="1617"/>
         </scene>
         <!--Add Person View Controller-->
         <scene sceneID="BZy-zS-ei6">
@@ -490,6 +490,81 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TGx-W3-gpB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3957.5999999999999" y="877.51124437781118"/>
+        </scene>
+        <!--테마설정-->
+        <scene sceneID="c3h-6c-Mbr">
+            <objects>
+                <viewController storyboardIdentifier="ThemeSelectViewController" title="테마설정" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J2j-Bp-y5q" customClass="ThemeSelectViewController" customModule="memoLittle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yDK-g2-9H5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQB-xx-UP4">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <color key="barTintColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="테마선택 Theme Selection" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="3NW-Vn-D3m">
+                                        <barButtonItem key="backBarButtonItem" title="뒤로" id="0iU-lt-F90"/>
+                                        <barButtonItem key="leftBarButtonItem" title="뒤로 Back" id="MdX-nb-2uB">
+                                            <connections>
+                                                <action selector="onBackBtn:" destination="J2j-Bp-y5q" id="LOB-aN-9DQ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="저장" id="AB7-8Y-ra2">
+                                            <connections>
+                                                <action selector="onSaveBtn:" destination="J2j-Bp-y5q" id="aJn-wZ-Yq7"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JDl-Py-DKC">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="6VJ-5f-a0o">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6VJ-5f-a0o" id="GTD-Sq-EvC">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="iPa-e0-XlH">
+                                        <rect key="frame" x="0.0" y="72" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iPa-e0-XlH" id="zoO-xl-iSO">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="xQB-xx-UP4" firstAttribute="leading" secondItem="51b-ig-30t" secondAttribute="leading" id="DpV-Yt-XP9"/>
+                            <constraint firstItem="xQB-xx-UP4" firstAttribute="top" secondItem="51b-ig-30t" secondAttribute="top" id="Elc-Dx-XiD"/>
+                            <constraint firstItem="xQB-xx-UP4" firstAttribute="trailing" secondItem="JDl-Py-DKC" secondAttribute="trailing" id="KnP-XD-0AA"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="JDl-Py-DKC" secondAttribute="bottom" id="QN3-bb-NxK"/>
+                            <constraint firstItem="51b-ig-30t" firstAttribute="trailing" secondItem="xQB-xx-UP4" secondAttribute="trailing" id="UnD-oO-f4e"/>
+                            <constraint firstItem="JDl-Py-DKC" firstAttribute="top" secondItem="xQB-xx-UP4" secondAttribute="bottom" id="bWb-BM-QQe"/>
+                            <constraint firstItem="JDl-Py-DKC" firstAttribute="width" secondItem="yDK-g2-9H5" secondAttribute="width" id="e1F-gl-XOQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="51b-ig-30t"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="설정 Settings" image="ic_more" id="NMx-Zn-9PD"/>
+                    <connections>
+                        <outlet property="navBar" destination="xQB-xx-UP4" id="nlQ-Jy-HIh"/>
+                        <outlet property="tableView" destination="JDl-Py-DKC" id="kk8-b2-cQe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sN8-yb-fuu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2638" y="1617"/>
         </scene>
     </scenes>
     <resources>

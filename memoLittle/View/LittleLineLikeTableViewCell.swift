@@ -17,15 +17,19 @@ class LittleLineLikeTableViewCell: UITableViewCell {
     @IBOutlet weak var tags: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        timeline.backgroundColor = Style.textColor
+        setupUI()
+        NotificationCenter.default.addObserver(self, selector: #selector(setupUI), name: NSNotification.Name("updateTheme"), object: nil)
+        // Initialization code
+    }
+
+    @objc func setupUI(){
+        timeline.backgroundColor = Style.lineColor
         nameSubLabel.textColor = Style.textColor
         personName.textColor = Style.textColor
         likeObject.textColor = Style.textColor
         tags.textColor = Style.tintColor
         self.contentView.backgroundColor = Style.backgroundColor
-        // Initialization code
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

@@ -18,6 +18,7 @@ class SettingsViewController: UIViewController {
         self.tableView.delegate = self
         tableView.dataSource = self
         setupUI()
+        NotificationCenter.default.addObserver(self, selector: #selector(setupUI), name: NSNotification.Name("updateTheme"), object: nil)
         // Do any additional setup after loading the view.
     }
 
@@ -26,12 +27,12 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setupUI(){
-        Style.themeNight()
+    @objc func setupUI(){
         self.view.backgroundColor = Style.backgroundColor
         self.tableView.backgroundColor = Style.backgroundColor
         navBar.barTintColor = Style.backgroundColor
         navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Style.textColor]
+        tableView.reloadData()
     }
 
     /*
@@ -55,7 +56,7 @@ extension SettingsViewController : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.accessoryType = .none
+        cell.accessoryType = .disclosureIndicator
         cell.textLabel?.text = list[indexPath.row]
         cell.textLabel?.textColor = Style.textColor
         cell.backgroundColor = Style.backgroundColor
@@ -65,9 +66,12 @@ extension SettingsViewController : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        //            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //            let vc = storyboard.instantiateViewController(withIdentifier: "PersonDetailViewController") as! PersonDetailViewController
-        //            self.present(vc, animated: true, completion: nil)
+        
+        if indexPath.row == 2 {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "ThemeSelectViewController") as! ThemeSelectViewController
+            self.show(vc, sender: nil)
+        }
     }
     
 }
