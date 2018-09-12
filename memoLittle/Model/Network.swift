@@ -16,7 +16,7 @@ class Network {
         let json : [String: String] = ["text": text, "icon_url":"http://emojis.slackmojis.com/emojis/images/1450451598/168/doge2.png?1450451598", "username": "memoLittle"]
         // 보내고자하는 데이터
         
-        let url = URL(string:"https://hooks.slack.com/services/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")
+        let url = URL(string:"")
         // 데이터를 보낼 주소
         var request = URLRequest(url: url!)
         // 그 주소에 대한 요청
